@@ -167,7 +167,7 @@ const PartnerWithUs = () => {
         style={{ height: isMobile ? "55vh" : "70vh" }}
       >
         <Image
-          src="/images/homeImage/Partnerbanner.jpeg"
+          src="/images/homeImage/PartnerBanner.jpeg"
           alt="Background Image"
           layout="fill"
           className="object-fit-cover"
