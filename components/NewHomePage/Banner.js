@@ -111,9 +111,9 @@ const Banner = () => {
           <div
             className={`fade-right ${animate ? "animate" : ""} position-relative`}
             style={{
-              maxWidth: isMobile ? "80%" : "500px",
+              maxWidth: isMobile ? "80%" : "700px",
               width: "100%",
-              height: isMobile ? "40px" : "80px",
+              height: isMobile ? "40px" : "90px",
             }}
           >
             <Image
@@ -136,7 +136,7 @@ const Banner = () => {
           <div
             className={`fade-right ${animate ? "animate" : ""} position-relative`}
             style={{
-              maxWidth: isMobile ? "80%" : "500px",
+              maxWidth: isMobile ? "80%" : "650px",
               width: "100%",
               height: isMobile ? "40px" : "90px",
             }}
@@ -150,7 +150,11 @@ const Banner = () => {
           </div>
 
           {/* Subtext */}
-          <p className={`fade-up ${animate ? "animate" : ""} fs-5 mt-3 lh-base text-center w-100 w-md-50`}>
+          <p className={`fade-up ${animate ? "animate" : ""} fs-5 mt-5 lh-base text-center`}
+           style={{
+            width: isMobile ? "100%" : "50%",
+            
+          }}>
             We focus on your most important outcomes – generating leads,
             increasing online sales, growing revenues, and improving keyword
             rankings.

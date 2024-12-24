@@ -137,7 +137,7 @@ const CaseStudies = () => {
             {cardData.map((card, index) => (
               <div key={index} className="d-flex justify-content-center">
                 <Card
-                  className={`case-study-card border border-danger rounded shadow m-md-5 m-3 ${
+                  className={`case-study-card border border-danger rounded shadow m-md-5 m- ${
                     isDesktop && index === activeIndex ? "elevated" : "" // Add "elevated" class only on desktop
                   }`}
                   style={{ maxWidth: "350px" }}
