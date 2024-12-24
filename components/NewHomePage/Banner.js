@@ -62,14 +62,14 @@ const Banner = () => {
 
           /* Custom styles for white lines */
           .line-left {
-            width: 20%;
+            width: 12%;
             height: 6px;
           }
 
           .line-right {
             width: 40%;
             height: 6px;
-          }
+          }            
 
           /* Mobile-specific styles */
           @media (max-width: 767px) {
@@ -100,16 +100,25 @@ const Banner = () => {
         {/* Centered Content */}
         <div className="position-relative z-3 px-4 d-flex flex-column align-items-center justify-content-center h-100">
           {/* Line on Left + DIGITAL MARKETING */}
-          <div className={`fade-left ${animate ? "animate" : ""} d-flex align-items-center justify-content-start w-100 mb-2`}>
+          <div
+            className={`fade-left ${
+              animate ? "animate" : ""
+            } d-flex align-items-center justify-content-start w-100 mb-2`}
+          >
             <div className="bg-white line-left me-3"></div>
-            <p className="fw-bold mb-0" style={{ fontSize: isMobile ? "1.3rem" : "4rem" }}>
+            <p
+              className="fw-bold mb-0"
+              style={{ fontSize: isMobile ? "1.3rem" : "4rem" }}
+            >
               DIGITAL MARKETING
             </p>
           </div>
 
           {/* Neon SOLUTIONS Image */}
           <div
-            className={`fade-right ${animate ? "animate" : ""} position-relative`}
+            className={`fade-right ${
+              animate ? "animate" : ""
+            } position-relative`}
             style={{
               maxWidth: isMobile ? "80%" : "700px",
               width: "100%",
@@ -121,12 +130,22 @@ const Banner = () => {
               alt="Solutions Text"
               fill
               className="object-fit-contain img-fluid"
+              style={{
+                right: isMobile ? "" : "20%",
+              }}
             />
           </div>
 
           {/* ALIGNED WITH + Line on Right */}
-          <div className={`fade-left ${animate ? "animate" : ""} d-flex align-items-center justify-content-end w-100`}>
-            <p className="fw-bold mb-0 me-3" style={{ fontSize: isMobile ? "1.3rem" : "4rem" }}>
+          <div
+            className={`fade-left ${
+              animate ? "animate" : ""
+            } d-flex align-items-center justify-content-end w-100`}
+          >
+            <p
+              className="fw-bold mb-0 me-3"
+              style={{ fontSize: isMobile ? "1.3rem" : "4rem" }}
+            >
               ALIGNED WITH
             </p>
             <div className="bg-white line-right"></div>
@@ -134,7 +153,9 @@ const Banner = () => {
 
           {/* Your Goals Image */}
           <div
-            className={`fade-right ${animate ? "animate" : ""} position-relative`}
+            className={`fade-right ${
+              animate ? "animate" : ""
+            } position-relative`}
             style={{
               maxWidth: isMobile ? "80%" : "650px",
               width: "100%",
@@ -145,16 +166,22 @@ const Banner = () => {
               src="/images/homeImage/YourGoalsImage.png"
               alt="Your Goals"
               fill
-              className="object-fit-contain img-fluid"
+              className="object-fit-contain img-fluid "
+              style={{
+                left: isMobile ? "" : "26%",
+              }}
             />
           </div>
 
           {/* Subtext */}
-          <p className={`fade-up ${animate ? "animate" : ""} fs-5 mt-5 lh-base text-center`}
-           style={{
-            width: isMobile ? "100%" : "50%",
-            
-          }}>
+          <p
+            className={`fade-up ${
+              animate ? "animate" : ""
+            } fs-5 mt-5 lh-base text-center`}
+            style={{
+              width: isMobile ? "100%" : "50%",
+            }}
+          >
             We focus on your most important outcomes – generating leads,
             increasing online sales, growing revenues, and improving keyword
             rankings.
