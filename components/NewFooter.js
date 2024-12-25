@@ -12,15 +12,29 @@ const NewFooter = () => {
       <div className="text-white position-relative d-flex mx-auto">
         {/* Background Image */}
         <div className="position-absolute w-100 h-100">
-          <Image
-            src="/images/homeImage/NewFooter.png" // Replace with the path to your image
-            alt="Footer Background"
-            layout="fill"
-            objectFit="cover"
-            objectPosition="center"
-            priority // Ensures this image loads quickly
-          />
-        </div>
+  {/* Desktop Footer Image */}
+  <Image
+    src="/images/homeImage/NewFooter.png" // Replace with the path to your desktop image
+    alt="Footer Background"
+    layout="fill"
+    objectFit="cover"
+    objectPosition="center"
+    priority
+    className="d-none d-lg-block" // Show only on large screens and above
+  />
+
+  {/* Mobile Footer Image */}
+  <Image
+    src="/images/homeImage/mobile_footer.jpg" // Replace with the path to your mobile image
+    alt="Footer Background"
+    layout="fill"
+    objectFit="cover"
+    objectPosition="center"
+    priority
+    className="d-lg-none" // Show only on smaller screens
+  />
+</div>
+
 
         {/* Content */}
         <div className="container py-5 position-relative">
@@ -300,12 +314,12 @@ const NewFooter = () => {
 
       {/* Social Media and Privacy Policy Section */}
       <Container
-        className="iv-grey px-1 py-2 z-4 position-relative d-lg-none d-flex "
+        className="iv-grey px-1 py-2 z-4 position-relative d-flex "
         fluid
       >
-        <Container className="text-start">
+        <Container className="text-centre ">
           <Row className="g-0">
-            <Col className="d-flex align-items-center justify-content-start">
+            <Col className="d-flex align-items-center justify-content-center">
               <p className="footer-text">Follow Us:</p>
               <Link
                 href="https://www.linkedin.com/company/ivistawebsolutions/mycompany/"

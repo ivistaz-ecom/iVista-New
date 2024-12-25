@@ -4,6 +4,7 @@ import { Card, Button } from "react-bootstrap";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Link from "next/link";
+import { Container } from "react-bootstrap";
 
 const CaseStudies = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -126,7 +127,7 @@ const CaseStudies = () => {
           }
         `}
       </style>
-      <div className="bg-white" style={{ minHeight: "80vh" }}>
+      <Container className="bg-white" >
         <div className="container py-5">
           <h2 className="text-center text-danger fw-bold">CASE STUDIES</h2>
           <h3 className="text-center fw-bold">PROVEN RESULTS, CLEAR IMPACT</h3>
@@ -180,7 +181,7 @@ const CaseStudies = () => {
             </Link>
           </div>
         </div>
-      </div>
+      </Container>
     </>
   );
 };
