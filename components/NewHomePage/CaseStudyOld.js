@@ -170,8 +170,10 @@ const CaseStudies = () => {
               );
             })}
           </Slider>
-          <div className="text-center mt-5">
-            <Button variant="outline-danger">Explore All Case Studies</Button>
+          <div className="text-center mt-5 justify-content-center d-flex">
+             <Link href="case-studies" className="btn btn-outline-danger">
+               Explore All Case Studies
+             </Link>
           </div>
         </div>
       </div>
