@@ -1,7 +1,7 @@
 import React from 'react'
 import Banner from '../../components/NewHomePage/Banner'
 import ImpactPage from './ImpactPage'
-import CaseStudies from './CaseStudies'
+import CaseStudies from './CaseStudyOld'
 import PartnerWithUs from './PartnerWithUs'
 
 const index = () => {
