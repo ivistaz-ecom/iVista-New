@@ -187,6 +187,12 @@ function Header1({ setChatVisible }) {
                     <hr className="m-divider" />
                   </li>
                   <li className="nav-item">
+                    <Link className="nav-link active" aria-current="page" href="/mastery-art-performance">MAP</Link>
+                  </li>
+                  <li className="divider-center">
+                    <hr className="m-divider" />
+                  </li>
+                  <li className="nav-item">
                     <Link className="nav-link active" aria-current="page" href="/contact-us">Contact Us</Link>
                   </li>
                 </ul>
