@@ -11,7 +11,7 @@ import ScrollAnimation from '../SharedComponents/ScrollAnimation';
 const NewMastery = () => {
     return (
         <>
-            <ScrollAnimation />
+            {/* <ScrollAnimation /> */}
             
             <article>
 

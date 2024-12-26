@@ -28,7 +28,7 @@ const MasteryArtPerformance = () => {
       />
 
       <Header />
-      <ScrollAnimation />
+      {/* <ScrollAnimation /> */}
       <div className="custom-container">
         <NewMastery />
         <Footer />
