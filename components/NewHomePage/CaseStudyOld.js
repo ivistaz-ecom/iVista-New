@@ -10,16 +10,21 @@ const CaseStudies = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isDesktop, setIsDesktop] = useState(true);
   const [hasScrolled, setHasScrolled] = useState(false); // Track if user has scrolled past the animations
+  const [ismobile, setIsMobile] = useState(false);
+
   const slidesToShow = isDesktop ? 3 : 1;
-  const ismobile = window.innerWidth <= 768;
 
   useEffect(() => {
-    const handleResize = () => {
-      setIsDesktop(window.innerWidth >= 1024);
-    };
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    // Check window size only after the component is mounted
+    if (typeof window !== "undefined") {
+      const handleResize = () => {
+        setIsDesktop(window.innerWidth >= 1024);
+        setIsMobile(window.innerWidth <= 768);
+      };
+      handleResize(); // Call initially to set the state
+      window.addEventListener("resize", handleResize);
+      return () => window.removeEventListener("resize", handleResize);
+    }
   }, []);
 
   useEffect(() => {
