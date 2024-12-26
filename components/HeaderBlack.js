@@ -178,11 +178,11 @@ function Header1({ setChatVisible }) {
                     <hr className="m-divider" />
                   </li>
                   <NavDropdown title="Company" id="navbarScrollingDropdown" className='custom-nav-company'>
-                    <NavDropdown.Item href="/our-team" className='nav-dropdown p-2'>Team</NavDropdown.Item>
-                    <NavDropdown.Item href="/our-clients" className='nav-dropdown p-2'>Clients</NavDropdown.Item>
-                    <NavDropdown.Item href="/mastery/about-us" className='nav-dropdown p-2'>About Us</NavDropdown.Item>
-                    <NavDropdown.Item href="/careers" className='nav-dropdown p-2'>Careers</NavDropdown.Item>
-                    <NavDropdown.Item href="/mastery-art-performance" className='nav-dropdown p-2'>MAP</NavDropdown.Item>
+                    <NavDropdown.Item href="/our-team" className='nav-dropdown px-2'>Team</NavDropdown.Item>
+                    <NavDropdown.Item href="/our-clients" className='nav-dropdown px-2'>Clients</NavDropdown.Item>
+                    <NavDropdown.Item href="/mastery/about-us" className='nav-dropdown px-2'>About Us</NavDropdown.Item>
+                    <NavDropdown.Item href="/careers" className='nav-dropdown px-2'>Careers</NavDropdown.Item>
+                    <NavDropdown.Item href="/mastery-art-performance" className='nav-dropdown px-2'>MAP</NavDropdown.Item>
                   </NavDropdown>
                   <li className="divider-center">
                     <hr className="m-divider" />
@@ -201,7 +201,7 @@ function Header1({ setChatVisible }) {
               <div>
                 Follow Us:
               </div>
-              <div className="d-flex align-items-center justify-content-start gap-2">
+              <div className="d-flex align-items-center justify-content-start gap-1">
                 <Link href="https://www.linkedin.com/company/ivistawebsolutions/mycompany/" target='_blank'>
                   <Image src="/images/linkedin.svg" width={43} height={43} className="social" alt='LinkedIn' />
                 </Link>

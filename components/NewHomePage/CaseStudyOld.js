@@ -7,23 +7,47 @@ import "slick-carousel/slick/slick-theme.css";
 import { caseStudiesData } from "../../utils/CaseStudiesData";
 
 const CaseStudies = () => {
-  const [activeIndex, setActiveIndex] = useState(0); // Active index for elevation effect
-  const [isDesktop, setIsDesktop] = useState(true); // State to track screen size
-  const slidesToShow = isDesktop ? 3 : 1; // Number of slides visible based on screen size
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [isDesktop, setIsDesktop] = useState(true);
+  const [hasScrolled, setHasScrolled] = useState(false); // Track if user has scrolled past the animations
+  const slidesToShow = isDesktop ? 3 : 1;
 
-  // Handle screen resize to determine desktop or mobile
   useEffect(() => {
     const handleResize = () => {
       setIsDesktop(window.innerWidth >= 1024);
     };
-
-    handleResize(); // Set initial state based on the screen size
+    handleResize();
     window.addEventListener("resize", handleResize);
-
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Slider settings
+  useEffect(() => {
+    const handleScroll = () => {
+      if (hasScrolled) return;
+
+      const elements = document.querySelectorAll(".fade-card");
+      let allCardsVisible = true;
+
+      elements.forEach((el) => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+          el.classList.add("active");
+        } else {
+          allCardsVisible = false;
+        }
+      });
+
+      // If all cards have been animated, disable further animations
+      if (allCardsVisible) {
+        setHasScrolled(true);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [hasScrolled]);
+
   const settings = {
     dots: true,
     infinite: true,
@@ -68,18 +92,34 @@ const CaseStudies = () => {
     ],
   };
 
-  const displayedData = caseStudiesData.slice(0, 6); // Limit to 6 items
+  const displayedData = caseStudiesData.slice(0, 6);
 
   return (
     <>
       <style>
         {`
+          .fade-card {
+            opacity: 0;
+            transform: translateY(50px); /* Default position for fade-up */
+            transition: all 3s ease-in-out;
+          }
+          .fade-card.active {
+            opacity: 1;
+            transform: translateY(0);
+          }
+
           .case-study-card {
             transition: transform 0.3s ease, box-shadow 0.3s ease;
           }
           .case-study-card.elevated {
-            transform: translateY(-30px);
+            transform: translateY(-40px);
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+          }
+          @media (max-width: 1024px) {
+            .case-study-card.elevated {
+              transform: none !important; /* Remove elevation effect on mobile */
+              box-shadow: none !important;
+            }
           }
           .custom-dot {
             width: 12px;
@@ -91,38 +131,10 @@ const CaseStudies = () => {
           .custom-dot.active {
             background-color: red;
           }
-          @media (max-width: 1024px) {
-            .case-study-card.elevated {
-              transform: none !important; /* Remove elevation effect on mobile */
-              box-shadow: none !important;
-            }
-          }
-          .slick-prev, .slick-next {
-            z-index: 1;
-          }
-          .card {
-            border: 2px solid #dc3545;
-            border-radius: 10px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-          }
-          .card-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-          }
-          .card-stats {
-            font-size: 2rem;
-            font-weight: 600;
-            color: #ED2224;
-          }
-          .card-text {
-            font-size: 0.9rem;
-            font-weight: 400;
-            color: #6c757d;
-          }
         `}
       </style>
       <div className="bg-white" style={{ minHeight: "80vh" }}>
-        <div className="container p-4">
+        <div className="container py-5">
           <h2 className="text-center text-danger fw-bold">CASE STUDIES</h2>
           <h3 className="text-center fw-bold">PROVEN RESULTS, CLEAR IMPACT</h3>
           <p className="text-center mb-5">
@@ -130,7 +142,7 @@ const CaseStudies = () => {
           </p>
           <Slider {...settings}>
             {displayedData.map((card, index) => {
-              const middleIndex = Math.floor(slidesToShow / 2); // Middle card index
+              const middleIndex = Math.floor(slidesToShow / 2);
               const shouldElevate =
                 index >= activeIndex &&
                 index < activeIndex + slidesToShow &&
@@ -139,14 +151,16 @@ const CaseStudies = () => {
               return (
                 <div key={index}>
                   <Card
-                    className={`case-study-card mx-auto d-flex flex-column h-100 m-5 ${
-                      isDesktop && shouldElevate ? "elevated" : ""
-                    }`}
+                    className={`case-study-card mx-auto d-flex flex-column h-100 m-5 border-2 border-danger rounded-4 ${
+                      !hasScrolled ? "fade-card" : ""
+                    } ${isDesktop && shouldElevate ? "elevated" : ""}`}
                     style={{ maxWidth: "350px", minHeight: "340px" }}
                   >
                     <Card.Body className="d-flex flex-column justify-content-between">
                       <div className="card-title d-flex justify-content-between align-items-center">
-                        <p className="card-stats mb-0">{card.stats}</p>
+                        <p className="fs-3 mb-0 red para-text fw-bold ps-3 ">
+                          {card.stats}
+                        </p>
                         <Image
                           src={card.image}
                           alt={card.title}
@@ -170,10 +184,13 @@ const CaseStudies = () => {
               );
             })}
           </Slider>
-          <div className="text-center mt-5 justify-content-center d-flex">
-             <Link href="case-studies" className="btn btn-outline-danger">
-               Explore All Case Studies
-             </Link>
+          <div className="text-center mt-5">
+            <Button
+              variant="outline-danger"
+              onClick={() => setHasScrolled(true)} // Disable animations manually
+            >
+              Explore All Case Studies
+            </Button>
           </div>
         </div>
       </div>
