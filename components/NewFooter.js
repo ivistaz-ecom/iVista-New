@@ -88,7 +88,7 @@ const NewFooter = () => {
                 <li className="mb-2">
                   <Link
                     className="text-white text-decoration-none"
-                    href="/"
+                    href="/service/design"
                   >
                     Design
                   </Link>
@@ -111,7 +111,7 @@ const NewFooter = () => {
                 <li className="mb-2">
                   <Link
                     className="text-white text-decoration-none"
-                    href="/"
+                    href="/mastery/solutions#value"
                   >
                     Value Creation
                   </Link>
@@ -119,7 +119,7 @@ const NewFooter = () => {
                 <li className="mb-2">
                   <Link
                     className="text-white text-decoration-none"
-                    href="/"
+                    href="/mastery/solutions#traffic"
                   >
                     Traffic
                   </Link>
@@ -127,7 +127,7 @@ const NewFooter = () => {
                 <li className="mb-2">
                   <Link
                     className="text-white text-decoration-none"
-                    href="/"
+                    href="/mastery/solutions#leadgen"
                   >
                     Lead-gen
                   </Link>
@@ -135,7 +135,7 @@ const NewFooter = () => {
                 <li className="mb-2">
                   <Link
                     className="text-white text-decoration-none"
-                    href="/"
+                    href="/mastery/solutions#onlinesales"
                   >
                     Online Sales
                   </Link>
@@ -143,7 +143,7 @@ const NewFooter = () => {
                 <li className="mb-2">
                   <Link
                     className="text-white text-decoration-none"
-                    href="/"
+                    href="/mastery/solutions#exp"
                   >
                     Experience
                   </Link>
@@ -232,12 +232,12 @@ const NewFooter = () => {
 
             {/* About Column */}
             <div className="col-md-3 mb-4">
-              <Link href="/mastery/about-us" className="text-white text-decoration-none"><h5 className="mb-3 fw-bold">About Ivistaz</h5></Link>
+              <Link href="/mastery/about-us" className="text-white text-decoration-none"><h5 className="mb-3 fw-bold">About iVistaz</h5></Link>
               <ul className="list-unstyled">
                 <li className="mb-2">
                   <Link
                     className="text-white text-decoration-none"
-                    href="/performance-focus"
+                    href="/"
                   >
                     Performance Focus
                   </Link>
@@ -245,7 +245,7 @@ const NewFooter = () => {
                 <li className="mb-2">
                   <Link
                     className="text-white text-decoration-none"
-                    href="/company"
+                    href="/"
                   >
                     Company
                   </Link>
@@ -253,7 +253,7 @@ const NewFooter = () => {
                 <li className="mb-2">
                   <Link
                     className="text-white text-decoration-none"
-                    href="/team"
+                    href="/our-team"
                   >
                     Team
                   </Link>
@@ -261,14 +261,14 @@ const NewFooter = () => {
                 <li className="mb-2">
                   <Link
                     className="text-white text-decoration-none"
-                    href="/contact"
+                    href="/contact-us"
                   >
                     Contact
                   </Link>
                 </li>
                 <li className="mt-3 fw-bold mb-2">
                   <Link
-                    className="text-white text-decoration-none"
+                    className="text-white text-decoration-none fw-bold"
                     href="/case-studies"
                   >
                     Case Studies
@@ -276,10 +276,10 @@ const NewFooter = () => {
                 </li>
                 <li className="fw-bold mb-2">
                   <Link
-                    className="text-white text-decoration-none"
-                    href="/blog"
+                    className="text-white text-decoration-none fw-bold"
+                    href="/blogs"
                   >
-                    Blog
+                    Blogs
                   </Link>
                 </li>
                 <li className="mt-3 mb-2">
