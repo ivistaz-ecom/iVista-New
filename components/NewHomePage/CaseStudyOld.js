@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
-import { Card, Button, Image } from "react-bootstrap";
+import { Card, Button, Image, Container } from "react-bootstrap";
 import Link from "next/link";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -11,6 +11,7 @@ const CaseStudies = () => {
   const [isDesktop, setIsDesktop] = useState(true);
   const [hasScrolled, setHasScrolled] = useState(false); // Track if user has scrolled past the animations
   const slidesToShow = isDesktop ? 3 : 1;
+  const ismobile = window.innerWidth <= 768;
 
   useEffect(() => {
     const handleResize = () => {
@@ -56,11 +57,12 @@ const CaseStudies = () => {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
+    pauseOnHover: true, // Ensure it pauses when hovered over
     beforeChange: (current, next) => setActiveIndex(next),
     customPaging: (i) => (
       <div
-        className={`custom-dot ${i === activeIndex ? "active" : ""}`}
-        style={{ width: "12px", height: "12px", borderRadius: "50%" }}
+        className={`custom-dot ${i === activeIndex ? "active" : "inactive"}`}
+        style={{ width: "10px", height: "10px", borderRadius: "50%" }}
       ></div>
     ),
     appendDots: (dots) => (
@@ -92,7 +94,7 @@ const CaseStudies = () => {
     ],
   };
 
-  const displayedData = caseStudiesData.slice(0, 6);
+  const displayedData = caseStudiesData.slice(0, 3);
 
   return (
     <>
@@ -100,19 +102,31 @@ const CaseStudies = () => {
         {`
           .fade-card {
             opacity: 0;
-            transform: translateY(50px); /* Default position for fade-up */
+            transform: translateY(90px); /* Default position for fade-up */
             transition: all 3s ease-in-out;
           }
           .fade-card.active {
             opacity: 1;
             transform: translateY(0);
           }
-
           .case-study-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: transform 0.8s ease, box-shadow 0.3s ease;
+          }
+
+           .custom-dot {
+            border: 2px solid lightcoral; /* Light red for inactive dots */
+            border-radius: 50%;
+            transition: border-color 0.3s ease, background-color 0.3s ease;
+          }
+          .custom-dot.active {
+            background-color: red; /* Active dot color */
+            border-color: red;
+          }
+          .custom-dot.inactive {
+            background-color: #f69093 !important;
           }
           .case-study-card.elevated {
-            transform: translateY(-40px);
+            transform: translateY(-75px);
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
           }
           @media (max-width: 1024px) {
@@ -120,41 +134,38 @@ const CaseStudies = () => {
               transform: none !important; /* Remove elevation effect on mobile */
               box-shadow: none !important;
             }
-          }
-          .custom-dot {
-            width: 12px;
-            height: 12px;
-            border: 2px solid red;
-            border-radius: 50%;
-            transition: border-color 0.3s ease;
-          }
-          .custom-dot.active {
-            background-color: red;
-          }
+          }   
         `}
       </style>
-      <div className="bg-white" style={{ minHeight: "80vh" }}>
+      <Container
+        fluid
+        className="bg-white mx-auto"
+        style={{ width: ismobile ? "100%" : "75%" }}
+      >
         <div className="container py-5">
           <h2 className="text-center text-danger fw-bold">CASE STUDIES</h2>
           <h3 className="text-center fw-bold">PROVEN RESULTS, CLEAR IMPACT</h3>
-          <p className="text-center mb-5">
+          <p className="text-center">
             Explore how we’ve helped businesses achieve measurable success.
           </p>
           <Slider {...settings}>
             {displayedData.map((card, index) => {
               const middleIndex = Math.floor(slidesToShow / 2);
-              const shouldElevate =
-                index >= activeIndex &&
-                index < activeIndex + slidesToShow &&
-                index === activeIndex + middleIndex;
+              const totalSlides = slidesToShow;
+              const indexIsMiddle =
+                (activeIndex + middleIndex) % totalSlides === index;
 
               return (
                 <div key={index}>
                   <Card
-                    className={`case-study-card mx-auto d-flex flex-column h-100 m-5 border-2 border-danger rounded-4 ${
+                    className={`case-study-card mx-auto d-flex flex-column h-100 border-2 border-danger rounded-4 gap-1 mb-3 ${
                       !hasScrolled ? "fade-card" : ""
-                    } ${isDesktop && shouldElevate ? "elevated" : ""}`}
-                    style={{ maxWidth: "350px", minHeight: "340px" }}
+                    } ${isDesktop && indexIsMiddle ? "elevated" : ""}`}
+                    style={{
+                      maxWidth: "300px",
+                      minHeight: "340px",
+                      marginTop: ismobile ? "" : "25%",
+                    }}
                   >
                     <Card.Body className="d-flex flex-column justify-content-between">
                       <div className="card-title d-flex justify-content-between align-items-center">
@@ -184,16 +195,13 @@ const CaseStudies = () => {
               );
             })}
           </Slider>
-          <div className="text-center mt-5">
-            <Button
-              variant="outline-danger"
-              onClick={() => setHasScrolled(true)} // Disable animations manually
-            >
+          <div className="text-center mt-5 justify-content-center d-flex">
+            <Link href="case-studies" className="btn btn-outline-danger">
               Explore All Case Studies
-            </Button>
+            </Link>
           </div>
         </div>
-      </div>
+      </Container>
     </>
   );
 };
