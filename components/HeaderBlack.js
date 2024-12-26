@@ -182,16 +182,12 @@ function Header1({ setChatVisible }) {
                     <NavDropdown.Item href="/our-clients" className='nav-dropdown p-2'>Clients</NavDropdown.Item>
                     <NavDropdown.Item href="/mastery/about-us" className='nav-dropdown p-2'>About Us</NavDropdown.Item>
                     <NavDropdown.Item href="/careers" className='nav-dropdown p-2'>Careers</NavDropdown.Item>
+                    <NavDropdown.Item href="/mastery-art-performance" className='nav-dropdown p-2'>MAP</NavDropdown.Item>
                   </NavDropdown>
                   <li className="divider-center">
                     <hr className="m-divider" />
                   </li>
-                  <li className="nav-item">
-                    <Link className="nav-link active" aria-current="page" href="/mastery-art-performance">MAP</Link>
-                  </li>
-                  <li className="divider-center">
-                    <hr className="m-divider" />
-                  </li>
+               
                   <li className="nav-item">
                     <Link className="nav-link active" aria-current="page" href="/contact-us">Contact Us</Link>
                   </li>
