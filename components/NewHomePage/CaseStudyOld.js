@@ -122,7 +122,7 @@ const CaseStudies = () => {
         `}
       </style>
       <div className="bg-white" style={{ minHeight: "80vh" }}>
-        <div className="container py-5">
+        <div className="container p-4">
           <h2 className="text-center text-danger fw-bold">CASE STUDIES</h2>
           <h3 className="text-center fw-bold">PROVEN RESULTS, CLEAR IMPACT</h3>
           <p className="text-center mb-5">
