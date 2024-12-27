@@ -67,7 +67,13 @@ const CaseStudies = () => {
     customPaging: (i) => (
       <div
         className={`custom-dot ${i === activeIndex ? "active" : "inactive"}`}
-        style={{ width: "10px", height: "10px", borderRadius: "50%" }}
+        style={{
+          width: "10px",
+          height: "10px",
+          borderRadius: "50%",
+          margin: "0", // No margin between dots
+          padding: "0", // No padding
+        }}
       ></div>
     ),
     appendDots: (dots) => (
@@ -75,7 +81,9 @@ const CaseStudies = () => {
         style={{
           display: "flex",
           justifyContent: "center",
-          padding: "10px 0",
+          alignItems: "center",
+          padding: 0, // Remove padding
+          gap: "0", // Remove the gap between dots
         }}
       >
         {dots}
@@ -117,11 +125,9 @@ const CaseStudies = () => {
           .case-study-card {
             transition: transform 0.8s ease, box-shadow 0.3s ease;
           }
-
-           .custom-dot {
-            border: 2px solid lightcoral; /* Light red for inactive dots */
-            border-radius: 50%;
-            transition: border-color 0.3s ease, background-color 0.3s ease;
+         .slick-dots li {
+            width: 4px !important; /* Remove width for individual dots */
+            height: auto !important; /* Adjust height */
           }
           .custom-dot.active {
             background-color: red; /* Active dot color */

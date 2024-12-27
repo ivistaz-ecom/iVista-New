@@ -57,7 +57,7 @@ const PartnerWithUs = () => {
             opacity: 0;
             transform: translateX(-50px);
             transition: opacity 1s ease, transform 1s ease;
-            font-size: 4rem;
+            font-size: 4.3rem;
           }
 
           .fade-right {
@@ -155,7 +155,10 @@ const PartnerWithUs = () => {
           </div>
 
           <div className="learn-more-btn text-center">
-          <Link href="/art/services" className="btn btn-light border border-white hover-outline">
+            <Link
+              href="/art/services"
+              className="btn btn-light border border-white hover-outline"
+            >
               Learn more about our Services
             </Link>
           </div>
@@ -164,7 +167,7 @@ const PartnerWithUs = () => {
 
       <div
         className={`position-relative text-white ${isMobile ? "w-100" : ""}`}
-        style={{ height: isMobile ? "60vh" : "75vh" }}
+        style={{ height: isMobile ? "55vh" : "75vh" }}
       >
         <Image
           src="/images/homeImage/PartnerBanner.jpeg"
@@ -178,18 +181,17 @@ const PartnerWithUs = () => {
           className={`position-absolute text-center px-4 ${
             !isMobile ? "top-50 start-50 translate-middle" : ""
           }`}
-       
         >
           <Image
-            src="/images/homeImage/PartnerImage.png"
+            src="/images/homeImage/Partner.png"
             alt="Partner Image"
-            width={300}
-            height={300}
+            width={600}
+            height={600}
             className="md:mb-3 img-fluid fade-right me-5"
             style={{
-              maxWidth: isMobile ? "60%" : "500px",
+              maxWidth: isMobile ? "60%" : "450px",
               width: "100%",
-              height: isMobile ? "40px" : "90px",
+              height: isMobile ? "35px" : "80px",
               marginLeft: isMobile ? "-20%" : "-60%",
             }}
           />
@@ -197,7 +199,7 @@ const PartnerWithUs = () => {
           <p
             className="fw-bold mb-0 fade-left "
             style={{
-              fontSize: isMobile ? "1.7rem" : "",
+              fontSize: isMobile ? "1.9rem" : "",
               marginLeft: isMobile ? "50px" : "90px",
             }}
           >
@@ -205,17 +207,16 @@ const PartnerWithUs = () => {
           </p>
 
           <Image
-            src="/images/homeImage/ArchiveImage.png"
+            src="/images/homeImage/Archive.png"
             alt="Archive Image"
-            width={300}
-            height={300}
+            width={600}
+            height={600}
             className="md:mb-3 img-fluid fade-right"
             style={{
-              maxWidth: isMobile ? "60%" : "500px",
+              maxWidth: isMobile ? "60%" : "450px",
               width: "100%",
-              height: isMobile ? "40px" : "90px",
+              height: isMobile ? "35px" : "80px",
               marginRight: isMobile ? "20%" : "80%",
-            
             }}
           />
 
@@ -229,20 +230,23 @@ const PartnerWithUs = () => {
             YOUR GOALS
           </p>
 
-          <div className="my-4 fade-up">
-            <p>
+          <div className="my-4 ">
+            <p className="fade-up">
               Whether you have a challenge to solve or a goal to reach, we can
               design solutions for your needs.
             </p>
-            <h3 className="fs-1">
+            <h3 className="fs-1 fade-up">
               Contact us to turn your digital marketing goals into results.
             </h3>
 
-            <div className=" text-center py-3">
-          <Link href="/contact-us" className="btn btn-light border border-white hover-outline">
-          Get in Touch
-            </Link>
-          </div>
+            <div className=" text-center py-3 fade-up">
+              <Link
+                href="/contact-us"
+                className="btn btn-light border border-white hover-outline"
+              >
+                Get in Touch
+              </Link>
+            </div>
           </div>
         </div>
       </div>

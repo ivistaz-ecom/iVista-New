@@ -120,13 +120,13 @@ const Banner = () => {
               animate ? "animate" : ""
             } position-relative`}
             style={{
-              maxWidth: isMobile ? "80%" : "700px",
+              maxWidth: isMobile ? "80%" : "650px",
               width: "100%",
-              height: isMobile ? "40px" : "90px",
+              height: isMobile ? "40px" : "95px",
             }}
           >
             <Image
-              src="/images/homeImage/SolutionImage.png"
+              src="/images/homeImage/Solutions.png"
               alt="Solutions Text"
               fill
               className="object-fit-contain img-fluid"
@@ -157,13 +157,13 @@ const Banner = () => {
               animate ? "animate" : ""
             } position-relative`}
             style={{
-              maxWidth: isMobile ? "80%" : "650px",
+              maxWidth: isMobile ? "80%" : "700px",
               width: "100%",
               height: isMobile ? "40px" : "90px",
             }}
           >
             <Image
-              src="/images/homeImage/YourGoalsImage.png"
+              src="/images/homeImage/YourGoals.png"
               alt="Your Goals"
               fill
               className="object-fit-contain img-fluid "
