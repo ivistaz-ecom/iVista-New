@@ -43,10 +43,10 @@ const ImpactPage = () => {
                 style={{ right: 0, top: "-80px" }}
               >
                 <Image
-                  src="/images/homeImage/MakeAnImpact.png"
+                  src="/images/homeImage/MakeAnImpactImage.png"
                   alt="System Illustration"
-                  width={900}
-                  height={600}
+                  width={750}
+                  height={500}
                   className="img-fluid rounded object-fit-contain"
                   style={{ objectFit: "cover" }}
                   priority
