@@ -103,7 +103,7 @@ const Banner = () => {
           <div
             className={`fade-left ${
               animate ? "animate" : ""
-            } d-flex align-items-center justify-content-start w-100 mb-2`}
+            } d-flex align-items-center justify-content-start w-100`}
           >
             <div className="bg-white line-left me-3"></div>
             <p
@@ -123,11 +123,13 @@ const Banner = () => {
               maxWidth: isMobile ? "80%" : "650px",
               width: "100%",
               height: isMobile ? "40px" : "95px",
+              
             }}
           >
             <Image
-              src="/images/homeImage/Solutions.png"
+              src="/images/homeImage/SolutionTextImage.png"
               alt="Solutions Text"
+              loading="lazy"
               fill
               className="object-fit-contain img-fluid"
               style={{
@@ -163,8 +165,9 @@ const Banner = () => {
             }}
           >
             <Image
-              src="/images/homeImage/YourGoals.png"
+              src="/images/homeImage/YourGoalTextImage.png"
               alt="Your Goals"
+              loading="lazy"
               fill
               className="object-fit-contain img-fluid "
               style={{

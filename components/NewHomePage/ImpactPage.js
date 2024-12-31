@@ -61,15 +61,15 @@ const ImpactPage = () => {
                   right: "5%",
                   transform: "translateY(-50%)",
                   background: "#ED2225",
-                  padding: isMobile ? "5%" : "3%", // Adjusted for mobile
+                  padding: isMobile ? "5%" : "4%", // Adjusted for mobile
                   maxWidth: "600px",
                   width: "100%",
                 }}
               >
-                <p className="fw-bold display-4">
+                <p className="fw-bold display-4 mb-0">
                   <span className="fw-bold text-black">IDEAS</span> THAT
                 </p>
-                <p className="fw-bold display-4">
+                <p className="fw-bold display-4 mb-0">
                   MAKE AN <span className="fw-bold text-black">IMPACT</span>
                 </p>
                 <p className="mt-3">

@@ -159,7 +159,7 @@ const PartnerWithUs = () => {
               href="/art/services"
               className="btn btn-light border border-white hover-outline"
             >
-              Learn more about our Services
+              Learn more about our services
             </Link>
           </div>
         </div>
@@ -183,7 +183,7 @@ const PartnerWithUs = () => {
           }`}
         >
           <Image
-            src="/images/homeImage/Partner.png"
+            src="/images/homeImage/PartnerTextImage.png"
             alt="Partner Image"
             width={600}
             height={600}
@@ -198,8 +198,7 @@ const PartnerWithUs = () => {
 
           <p
             className="fw-bold mb-0 fade-left "
-            style={{
-              fontSize: isMobile ? "1.9rem" : "",
+            style={{ fontSize: isMobile ? "1.7rem" : "4rem" ,
               marginLeft: isMobile ? "50px" : "90px",
             }}
           >
@@ -207,7 +206,7 @@ const PartnerWithUs = () => {
           </p>
 
           <Image
-            src="/images/homeImage/Archive.png"
+            src="/images/homeImage/ArchiveTextImage.png"
             alt="Archive Image"
             width={600}
             height={600}
@@ -223,7 +222,7 @@ const PartnerWithUs = () => {
           <p
             className="fw-bold my-0 fade-left ms-5"
             style={{
-              fontSize: isMobile ? "1.7rem" : "",
+              fontSize: isMobile ? "1.7rem" : "4rem" ,
               marginLeft: isMobile ? "50px" : "90px",
             }}
           >
@@ -235,10 +234,6 @@ const PartnerWithUs = () => {
               Whether you have a challenge to solve or a goal to reach, we can
               design solutions for your needs.
             </p>
-            <h3 className="fs-1 fade-up">
-              Contact us to turn your digital marketing goals into results.
-            </h3>
-
             <div className=" text-center py-3 fade-up">
               <Link
                 href="/contact-us"

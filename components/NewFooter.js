@@ -12,71 +12,42 @@ const NewFooter = () => {
       <div className="text-white position-relative d-flex mx-auto">
         {/* Background Image */}
         <div className="position-absolute w-100 h-100">
-  {/* Desktop Footer Image */}
-  <Image
-    src="/images/homeImage/NewFooter.png" // Replace with the path to your desktop image
-    alt="Footer Background"
-    layout="fill"
-    objectFit="cover"
-    objectPosition="center"
-    priority
-    className="d-none d-lg-block" // Show only on large screens and above
-  />
+          {/* Desktop Footer Image */}
+          <Image
+            src="/images/homeImage/NewFooter.png" // Replace with the path to your desktop image
+            alt="Footer Background"
+            layout="fill"
+            objectFit="cover"
+            objectPosition="center"
+            priority
+            className="d-none d-lg-block" // Show only on large screens and above
+          />
 
-  {/* Mobile Footer Image */}
-  <Image
-    src="/images/homeImage/mobile_footer.jpg" // Replace with the path to your mobile image
-    alt="Footer Background"
-    layout="fill"
-    objectFit="cover"
-    objectPosition="center"
-    priority
-    className="d-lg-none" // Show only on smaller screens
-  />
-</div>
-
+          {/* Mobile Footer Image */}
+          <Image
+            src="/images/homeImage/mobile_footer.jpg" // Replace with the path to your mobile image
+            alt="Footer Background"
+            layout="fill"
+            objectFit="cover"
+            objectPosition="center"
+            priority
+            className="d-lg-none" // Show only on smaller screens
+          />
+        </div>
 
         {/* Content */}
         <div className="container py-5 position-relative">
           <div className="row">
             {/* Services Column */}
             <div className="col-md-3 mb-4">
-            <Link href="/art/services" className="text-white text-decoration-none"> <h5 className="mb-3 fw-bold">Services</h5></Link>
+              <Link
+                href="/art/services"
+                className="text-white text-decoration-none"
+              >
+                {" "}
+                <h5 className="mb-3 fw-bold">Services</h5>
+              </Link>
               <ul className="list-unstyled">
-                <li className="mb-2">
-                  <Link
-                    className="text-white text-decoration-none"
-                    href="/service/website-design-and-development"
-                  >
-                    Web Design & Development
-                  </Link>
-                </li>
-                <li className="mb-2">
-                  <Link className="text-white text-decoration-none" href="/service/search-engine-optimization">
-                    Search Engine Optimization
-                  </Link>
-                </li>
-                <li className="mb-2">
-                  <Link className="text-white text-decoration-none" href="/service/search-engine-marketing">
-                    Search Engine Marketing
-                  </Link>
-                </li>
-                <li className="mb-2">
-                  <Link
-                    className="text-white text-decoration-none"
-                    href="/service/organic-social-media"
-                  >
-                    Social Media - Organic
-                  </Link>
-                </li>
-                <li className="mb-2">
-                  <Link
-                    className="text-white text-decoration-none"
-                    href="/service/social-media-marketing"
-                  >
-                    Social Media Marketing
-                  </Link>
-                </li>
                 <li className="mb-2">
                   <Link
                     className="text-white text-decoration-none"
@@ -96,9 +67,50 @@ const NewFooter = () => {
                 <li className="mb-2">
                   <Link
                     className="text-white text-decoration-none"
+                    href="/service/search-engine-marketing"
+                  >
+                    Search Engine Marketing
+                  </Link>
+                </li>
+                <li className="mb-2">
+                  <Link
+                    className="text-white text-decoration-none"
+                    href="/service/search-engine-optimization"
+                  >
+                    Search Engine Optimization
+                  </Link>
+                </li>
+                <li className="mb-2">
+                  <Link
+                    className="text-white text-decoration-none"
+                    href="/service/social-media-marketing"
+                  >
+                    Social Media Marketing
+                  </Link>
+                </li>
+                <li className="mb-2">
+                  <Link
+                    className="text-white text-decoration-none"
+                    href="/service/organic-social-media"
+                  >
+                    Social Media - Organic
+                  </Link>
+                </li>
+
+                {/* <li className="mb-2">
+                  <Link
+                    className="text-white text-decoration-none"
                     href="/"
                   >
                     Videos
+                  </Link>
+                </li> */}
+                <li className="mb-2">
+                  <Link
+                    className="text-white text-decoration-none"
+                    href="/service/website-design-and-development"
+                  >
+                    Web Design & Development
                   </Link>
                 </li>
               </ul>
@@ -106,16 +118,13 @@ const NewFooter = () => {
 
             {/* Solutions Column */}
             <div className="col-md-3 mb-4">
-              <Link className="text-white text-decoration-none" href="/mastery/solutions"><h5 className="mb-3 fw-bold">Solutions</h5></Link>
+              <Link
+                className="text-white text-decoration-none"
+                href="/mastery/solutions"
+              >
+                <h5 className="mb-3 fw-bold">Solutions</h5>
+              </Link>
               <ul className="list-unstyled">
-                <li className="mb-2">
-                  <Link
-                    className="text-white text-decoration-none"
-                    href="/mastery/solutions#value"
-                  >
-                    Value Creation
-                  </Link>
-                </li>
                 <li className="mb-2">
                   <Link
                     className="text-white text-decoration-none"
@@ -148,29 +157,26 @@ const NewFooter = () => {
                     Experience
                   </Link>
                 </li>
+                <li className="mb-2">
+                  <Link
+                    className="text-white text-decoration-none"
+                    href="/mastery/solutions#value"
+                  >
+                    Value Creation
+                  </Link>
+                </li>
               </ul>
             </div>
 
             {/* Industries Column */}
             <div className="col-md-3 mb-4">
-             <Link className="text-white text-decoration-none" href="/performance/industries"> <h5 className="mb-3 fw-bold">Industries</h5></Link>
+              <Link
+                className="text-white text-decoration-none"
+                href="/performance/industries"
+              >
+                <h5 className="mb-3 fw-bold">Industries</h5>
+              </Link>
               <ul className="list-unstyled">
-                <li className="mb-2">
-                  <Link
-                    className="text-white text-decoration-none"
-                    href="/industries/technology-IT"
-                  >
-                    Tech
-                  </Link>
-                </li>
-                <li className="mb-2">
-                  <Link
-                    className="text-white text-decoration-none"
-                    href="/industries/hospitality"
-                  >
-                    Hospitality
-                  </Link>
-                </li>
                 <li className="mb-2">
                   <Link
                     className="text-white text-decoration-none"
@@ -182,35 +188,16 @@ const NewFooter = () => {
                 <li className="mb-2">
                   <Link
                     className="text-white text-decoration-none"
-                    href="/"
-                  >
-                    Aviation
-                  </Link>
-                </li>
-                <li className="mb-2">
-                  <Link
-                    className="text-white text-decoration-none"
-                    href="/industries/ngos"
-                  >
-                    Not-for-profit
-                  </Link>
-                </li>
-                <li className="mb-2">
-                  <Link
-                    className="text-white text-decoration-none"
                     href="/industries/automobiles"
                   >
                     Automobiles
                   </Link>
                 </li>
-                <li className="mb-2">
-                  <Link
-                    className="text-white text-decoration-none"
-                    href="/industries/jewellery"
-                  >
-                    Jewellery
+                {/* <li className="mb-2">
+                  <Link className="text-white text-decoration-none" href="/">
+                    Aviation
                   </Link>
-                </li>
+                </li> */}
                 <li className="mb-2">
                   <Link
                     className="text-white text-decoration-none"
@@ -227,29 +214,61 @@ const NewFooter = () => {
                     Fashion & Accessories
                   </Link>
                 </li>
+                <li className="mb-2">
+                  <Link
+                    className="text-white text-decoration-none"
+                    href="/industries/hospitality"
+                  >
+                    Hospitality
+                  </Link>
+                </li>
+                <li className="mb-2">
+                  <Link
+                    className="text-white text-decoration-none"
+                    href="/industries/jewellery"
+                  >
+                    Jewellery
+                  </Link>
+                </li>
+                <li className="mb-2">
+                  <Link
+                    className="text-white text-decoration-none"
+                    href="/industries/ngos"
+                  >
+                    Not-for-profit
+                  </Link>
+                </li>
+
+                <li className="mb-2">
+                  <Link
+                    className="text-white text-decoration-none"
+                    href="/industries/technology-IT"
+                  >
+                    Tech
+                  </Link>
+                </li>
               </ul>
             </div>
 
             {/* About Column */}
             <div className="col-md-3 mb-4">
-              <Link href="/mastery/about-us" className="text-white text-decoration-none"><h5 className="mb-3 fw-bold">About iVistaz</h5></Link>
+              <Link
+                href="/mastery/about-us"
+                className="text-white text-decoration-none"
+              >
+                <h5 className="mb-3 fw-bold">About iVistaz</h5>
+              </Link>
               <ul className="list-unstyled">
-                <li className="mb-2">
-                  <Link
-                    className="text-white text-decoration-none"
-                    href="/"
-                  >
+                {/* <li className="mb-2">
+                  <Link className="text-white text-decoration-none" href="/">
                     Performance Focus
                   </Link>
-                </li>
-                <li className="mb-2">
-                  <Link
-                    className="text-white text-decoration-none"
-                    href="/"
-                  >
+                </li> */}
+                {/* <li className="mb-2">
+                  <Link className="text-white text-decoration-none" href="/">
                     Company
                   </Link>
-                </li>
+                </li> */}
                 <li className="mb-2">
                   <Link
                     className="text-white text-decoration-none"
@@ -261,11 +280,33 @@ const NewFooter = () => {
                 <li className="mb-2">
                   <Link
                     className="text-white text-decoration-none"
+                    href="/our-clients"
+                  >
+                    Clients
+                  </Link>
+                </li>
+                <li className="mb-2">
+                  <Link className="text-white text-decoration-none" href="/careers">
+                   Careers
+                  </Link>
+                </li>
+                <li className="mb-2">
+                  <Link
+                    className="text-white text-decoration-none"
                     href="/contact-us"
                   >
                     Contact
                   </Link>
                 </li>
+                <li className="mb-2">
+                  <Link
+                    className="text-white text-decoration-none"
+                    href="/contact-us"
+                  >
+                    M.A.P
+                  </Link>
+                </li>
+
                 <li className="mt-3 fw-bold mb-2">
                   <Link
                     className="text-white text-decoration-none fw-bold"
@@ -380,7 +421,7 @@ const NewFooter = () => {
         fluid
       >
         <Container className="text-center copyright p-0">
-        <div className="d-flex flex-lg-row flex-column gap-lg-5 gap-1 col-lg-12">
+          <div className="d-flex flex-lg-row flex-column gap-lg-5 gap-1 col-lg-12">
             <div className="col-lg-9 text-lg-start text-center">
               <p className="mb-0" style={{ fontSize: "17px" }}>
                 © {currentYear} iVistaz Ecom Services Pvt. Ltd.
