@@ -59,20 +59,22 @@ const CaseStudies = () => {
     infinite: true,
     speed: 500,
     slidesToShow,
-    slidesToScroll: 1,
+    slidesToScroll: 3,
     autoplay: true,
-    autoplaySpeed: 3000,
-    pauseOnHover: true, // Ensure it pauses when hovered over
+    autoplaySpeed: 5000,
+    pauseOnHover: true,
     beforeChange: (current, next) => setActiveIndex(next),
     customPaging: (i) => (
       <div
-        className={`custom-dot ${i === activeIndex ? "active" : "inactive"}`}
+        className={`custom-dot ${
+          Math.floor(activeIndex / slidesToShow) === i ? "active" : "inactive"
+        }`}
         style={{
           width: "10px",
           height: "10px",
           borderRadius: "50%",
-          margin: "0", // No margin between dots
-          padding: "0", // No padding
+          backgroundColor:
+            Math.floor(activeIndex / slidesToShow) === i ? "red" : "#f69093",
         }}
       ></div>
     ),
@@ -82,11 +84,11 @@ const CaseStudies = () => {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          padding: 0, // Remove padding
-          gap: "0", // Remove the gap between dots
+          padding: "0",
+          gap: "0px",
         }}
       >
-        {dots}
+        {dots.slice(0, 2)} {/* Show only the first two dots */}
       </ul>
     ),
     responsive: [
@@ -107,7 +109,7 @@ const CaseStudies = () => {
     ],
   };
 
-  const displayedData = caseStudiesData.slice(0, 3);
+  const displayedData = caseStudiesData.slice(0, 6);
 
   return (
     <>
@@ -161,10 +163,12 @@ const CaseStudies = () => {
           </p>
           <Slider {...settings}>
             {displayedData.map((card, index) => {
-              const middleIndex = Math.floor(slidesToShow / 2);
-              const totalSlides = slidesToShow;
+              const totalSlides = displayedData.length; // Total number of cards
+              const middleIndex = Math.floor(slidesToShow / 2); // Adjust based on the number of visible slides
               const indexIsMiddle =
-                (activeIndex + middleIndex) % totalSlides === index;
+                index >= activeIndex &&
+                index < activeIndex + slidesToShow &&
+                index === activeIndex + middleIndex;
 
               return (
                 <div key={index}>
@@ -180,7 +184,7 @@ const CaseStudies = () => {
                   >
                     <Card.Body className="d-flex flex-column justify-content-between">
                       <div className="card-title d-flex justify-content-between align-items-center">
-                        <p className="fs-3 mb-0 red para-text fw-bold ps-3 ">
+                        <p className="fs-1 mb-0 red para-text fw-bold ps-3 ">
                           {card.stats}
                         </p>
                         <Image

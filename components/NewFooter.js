@@ -302,7 +302,7 @@ const NewFooter = () => {
                 <li className="mb-2">
                   <Link
                     className="text-white text-decoration-none"
-                    href="/contact-us"
+                    href="/mastery-art-performance"
                   >
                     M.A.P
                   </Link>
