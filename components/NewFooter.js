@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link"; // Import Link from Next.js for routing
 import { Container, Row, Col } from "react-bootstrap";
+import CollectChatScript from "./ChatBot";
 
 const NewFooter = () => {
   const currentYear = new Date().getFullYear();
@@ -227,7 +228,7 @@ const NewFooter = () => {
                     className="text-white text-decoration-none"
                     href="/industries/jewellery"
                   >
-                    Jewellery
+                    Jewelry
                   </Link>
                 </li>
                 <li className="mb-2">
@@ -440,6 +441,7 @@ const NewFooter = () => {
           </div>
         </Container>
       </Container>
+      <CollectChatScript />
     </>
   );
 };
