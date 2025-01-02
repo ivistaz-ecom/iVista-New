@@ -87,11 +87,12 @@ const Banner = () => {
         `}
       </style>
 
-      <div className="position-relative text-center text-white vh-100 overflow-hidden">
+      <div className="position-relative text-center text-white vh-100 overflow-hidden bg-black">
         {/* Background Image */}
         <Image
           src="/images/homeImage/home_banner.jpeg"
           alt="Background Image"
+          rel="preload"
           fill
           className="object-fit-cover"
           priority
