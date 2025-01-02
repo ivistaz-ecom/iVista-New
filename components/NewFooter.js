@@ -155,7 +155,7 @@ const NewFooter = () => {
                     className="text-white text-decoration-none"
                     href="/mastery/solutions#exp"
                   >
-                    Experience
+                    User Experience
                   </Link>
                 </li>
                 <li className="mb-2">
@@ -236,7 +236,7 @@ const NewFooter = () => {
                     className="text-white text-decoration-none"
                     href="/industries/ngos"
                   >
-                    Not-for-profit
+                    Not-for-Profits/NGOs
                   </Link>
                 </li>
 
@@ -245,7 +245,7 @@ const NewFooter = () => {
                     className="text-white text-decoration-none"
                     href="/industries/technology-IT"
                   >
-                    Tech
+                     Tech/IT
                   </Link>
                 </li>
               </ul>
@@ -447,3 +447,5 @@ const NewFooter = () => {
 };
 
 export default NewFooter;
+
+
