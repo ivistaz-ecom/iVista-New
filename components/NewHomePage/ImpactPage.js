@@ -31,7 +31,7 @@ const ImpactPage = () => {
           className="position-relative d-flex flex-column align-items-center justify-content-center"
           style={{ maxWidth: "1200px" }}
         >
-          {/* Top Dotted Red Design Image */}
+          {/* Top Section */}
           <div
             className="container-fluid d-flex"
             style={{ height: isMobile ? "80vh" : "100vh" }}
@@ -52,6 +52,7 @@ const ImpactPage = () => {
                   priority
                 />
               </div>
+
               {/* Text overlay */}
               <div
                 className="position-absolute d-flex flex-column justify-content-center rounded text-white z-3"
@@ -61,7 +62,7 @@ const ImpactPage = () => {
                   right: "5%",
                   transform: "translateY(-50%)",
                   background: "#ED2225",
-                  padding: isMobile ? "5%" : "4%", // Adjusted for mobile
+                  padding: isMobile ? "5%" : "4%",
                   maxWidth: "600px",
                   width: "100%",
                 }}
@@ -78,6 +79,44 @@ const ImpactPage = () => {
                   online visibility, our approach is results-driven and grounded
                   in expertise.
                 </p>
+              </div>
+
+              {/* Red dotted image at the bottom center */}
+              <div
+                className="position-absolute d-none d-md-block"
+                style={{
+                  bottom: "40%",
+                  left: "30%",
+                  transform: "translateX(-50%)",
+                }}
+              >
+                <Image
+                  src="/images/homeImage/RedDotted.png"
+                  alt="Red Dotted Illustration"
+                  width={300}
+                  height={300}
+                  className="img-fluid rounded object-fit-contain"
+                  style={{ objectFit: "contain" }}
+                  priority
+                />
+              </div>
+              <div
+                className="position-absolute"
+                style={{
+                  bottom: isMobile ? "13%" : "0",
+                  left: "50%",
+                  transform: "translateX(-50%)",
+                }}
+              >
+                <Image
+                  src="/images/homeImage/HalfRedDot.png"
+                  alt="Red Dotted Illustration"
+                  width={400}
+                  height={400}
+                  className="img-fluid rounded object-fit-contain"
+                  style={{ objectFit: "contain" }}
+                  priority
+                />
               </div>
             </div>
           </div>

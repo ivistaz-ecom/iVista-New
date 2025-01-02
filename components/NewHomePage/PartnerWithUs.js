@@ -133,7 +133,7 @@ const PartnerWithUs = () => {
           {/* Video for desktop view */}
           <div className="d-none d-md-block">
             <video
-              src="/videos/digital_growth.mp4"
+              src="/videos/digital_growth1.mp4"
               className="w-100"
               autoPlay
               muted
@@ -145,7 +145,7 @@ const PartnerWithUs = () => {
           {/* Video for mobile view */}
           <div className="d-block d-md-none">
             <video
-              src="/videos/DigitalGrowthMobile.mp4"
+              src="/videos/DigitalGrowthMobile1.mp4"
               className="w-100"
               autoPlay
               muted
