@@ -29,7 +29,7 @@ const CollectChatScript = () => {
       <style>
         {`
           #chat-bot-launcher-container.chat-bot-avatar-launcher, #chat-bot-launcher-container.chat-bot-launcher-notext {
-                z-index: 3;
+                z-index: 5;
                 top: 75%;
                 padding: 20px ;
           }
