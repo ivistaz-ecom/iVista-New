@@ -329,25 +329,18 @@ const NewFooter = () => {
                     className="text-white text-decoration-none"
                     href="/privacy-policy"
                   >
-                    Privacy
+                    Privacy Statement
                   </Link>
                 </li>
-                <li className="mb-2">
+                {/* <li className="mb-2">
                   <Link
                     className="text-white text-decoration-none"
                     href="/statement"
                   >
                     Statement
                   </Link>
-                </li>
-                <li className="mb-2">
-                  <Link
-                    className="text-white text-decoration-none"
-                    href="/disclaimer"
-                  >
-                    Disclaimer
-                  </Link>
-                </li>
+                </li> */}
+              
               </ul>
             </div>
           </div>

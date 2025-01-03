@@ -170,7 +170,7 @@ const PartnerWithUs = () => {
               href="/art/services"
               className="btn btn-light border border-white custom-hover-btn"
             >
-              Learn more about our services
+              Learn More About Our Services
             </Link>
           </div>
         </div>
@@ -251,7 +251,7 @@ const PartnerWithUs = () => {
                 href="/contact-us"
                 className="btn btn-light border border-white custom-hover-btn"
               >
-                Get in Touch
+                Get In Touch
               </Link>
             </div>
           </div>
