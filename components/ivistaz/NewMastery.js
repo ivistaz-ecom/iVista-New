@@ -9,13 +9,7 @@ import ScrollAnimation from "../SharedComponents/ScrollAnimation";
 const NewMastery = () => {
   return (
     <>
-      <style>
-        {`
-        .active-text_mastery {
-            color: #808080;
-            }`
-        }
-      </style>
+
       {/* <ScrollAnimation /> */}
 
       <article>
