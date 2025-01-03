@@ -87,7 +87,19 @@ const PartnerWithUs = () => {
             transform: translate(-50%, -50%);
             z-index: 10; /* Ensure it is above the video */
           }
+            
+                     .custom-hover-btn {
+  background-color: white;
+  color: black;
+  transition: all 0.3s ease;
+}
 
+.custom-hover-btn:hover {
+  background-color: transparent !important;
+  color: white !important;
+  border-color: white !important;
+}
+     
             @media (max-width: 768px) {
             .fade-left, .fade-right, .fade-up {
               font-size: 20px;
@@ -113,18 +125,17 @@ const PartnerWithUs = () => {
             .object-fit-cover {
               object-position: center top; /* Ensure image covers well on mobile */
             }
-              
-            @media (max-width: 768px) {
-              .learn-more-btn {
-                position: absolute;
-                width: 100%; /* Full width */
-                top: 80%; /* Adjust the vertical position */
-                left: 0; /* Align to the left edge */
-                transform: translate(0, -50%); /* Center vertically */
-                z-index: 10; /* Ensure it is above the video */
-                text-align: center; /* Center the button text */
-              }
+  
+            .learn-more-btn {
+              position: absolute;
+              width: 100%; /* Full width */
+              top: 80%; /* Adjust the vertical position */
+              left: 0; /* Align to the left edge */
+              transform: translate(0, -50%); /* Center vertically */
+              z-index: 10; /* Ensure it is above the video */
+              text-align: center; /* Center the button text */
             }
+            
                     `}
       </style>
 
@@ -157,7 +168,7 @@ const PartnerWithUs = () => {
           <div className="learn-more-btn text-center">
             <Link
               href="/art/services"
-              className="btn btn-light border border-white hover-outline"
+              className="btn btn-light border border-white custom-hover-btn"
             >
               Learn more about our services
             </Link>
@@ -198,7 +209,8 @@ const PartnerWithUs = () => {
 
           <p
             className="fw-bold mb-0 fade-left "
-            style={{ fontSize: isMobile ? "1.7rem" : "4rem" ,
+            style={{
+              fontSize: isMobile ? "1.7rem" : "4rem",
               marginLeft: isMobile ? "50px" : "90px",
             }}
           >
@@ -222,7 +234,7 @@ const PartnerWithUs = () => {
           <p
             className="fw-bold my-0 fade-left ms-5"
             style={{
-              fontSize: isMobile ? "1.7rem" : "4rem" ,
+              fontSize: isMobile ? "1.7rem" : "4rem",
               marginLeft: isMobile ? "50px" : "90px",
             }}
           >
@@ -237,7 +249,7 @@ const PartnerWithUs = () => {
             <div className=" text-center py-3 fade-up">
               <Link
                 href="/contact-us"
-                className="btn btn-light border border-white hover-outline"
+                className="btn btn-light border border-white custom-hover-btn"
               >
                 Get in Touch
               </Link>

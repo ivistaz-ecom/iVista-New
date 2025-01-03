@@ -127,10 +127,10 @@ const CaseStudies = () => {
           .case-study-card {
             transition: transform 0.8s ease, box-shadow 0.3s ease;
           }
-         .slick-dots li {
-            width: 4px !important; /* Remove width for individual dots */
-            height: auto !important; /* Adjust height */
-          }
+          .slick-dots li {
+              width: 4px !important; /* Remove width for individual dots */
+              height: auto !important; /* Adjust height */
+            }
           .custom-dot.active {
             background-color: red; /* Active dot color */
             border-color: red;
@@ -141,6 +141,17 @@ const CaseStudies = () => {
           .case-study-card.elevated {
             transform: translateY(-75px);
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+          }
+
+         .explore-btn {
+            border-color: #ed2224;
+            color: #000; /* Default color */
+            transition: all 0.2s ease-in-out;
+          }
+          .explore-btn:hover {
+            background-color:#ed2224 ;
+            color: #ffffff;
+            border-color: #ed2224 ;
           }
           @media (max-width: 1024px) {
             .case-study-card.elevated {
@@ -156,7 +167,7 @@ const CaseStudies = () => {
         style={{ width: ismobile ? "100%" : "75%" }}
       >
         <div className="container py-5">
-          <h2 className="text-center text-danger fw-bold">CASE STUDIES</h2>
+          <h2 className="text-center text-red fw-bold">CASE STUDIES</h2>
           <h3 className="text-center fw-bold">PROVEN RESULTS, CLEAR IMPACT</h3>
           <p className="text-center">
             Explore how we’ve helped businesses achieve measurable success.
@@ -211,7 +222,7 @@ const CaseStudies = () => {
             })}
           </Slider>
           <div className="text-center mt-5 justify-content-center d-flex">
-            <Link href="case-studies" className="btn btn-outline-danger">
+            <Link href="case-studies" className="explore-btn btn">
               Explore All Case Studies
             </Link>
           </div>
