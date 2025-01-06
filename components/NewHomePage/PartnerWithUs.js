@@ -144,7 +144,7 @@ const PartnerWithUs = () => {
           {/* Video for desktop view */}
           <div className="d-none d-md-block">
             <video
-              src="/videos/digital_growth1.mp4"
+              src="/videos/DigitalGrowth.mp4"
               className="w-100"
               autoPlay
               muted
@@ -156,7 +156,7 @@ const PartnerWithUs = () => {
           {/* Video for mobile view */}
           <div className="d-block d-md-none">
             <video
-              src="/videos/DigitalGrowthMobile1.mp4"
+              src="/videos/DigitalGrowthMobile.mp4"
               className="w-100"
               autoPlay
               muted
@@ -244,7 +244,7 @@ const PartnerWithUs = () => {
           <div className="my-4 ">
             <p className="fade-up">
               Whether you have a challenge to solve or a goal to reach, we can
-              design solutions for your needs.
+              design solutions for your needs
             </p>
             <div className=" text-center py-3 fade-up">
               <Link

@@ -170,7 +170,7 @@ const CaseStudies = () => {
           <h2 className="text-center text-red fw-bold">CASE STUDIES</h2>
           <h3 className="text-center fw-bold">PROVEN RESULTS, CLEAR IMPACT</h3>
           <p className="text-center">
-            Explore how we’ve helped businesses achieve measurable success.
+            Explore how we’ve helped businesses achieve measurable success
           </p>
           <Slider {...settings}>
             {displayedData.map((card, index) => {

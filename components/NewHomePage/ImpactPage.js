@@ -77,7 +77,7 @@ const ImpactPage = () => {
                   We deliver practical, innovative solutions that solve real
                   challenges. Whether designing a new website or enhancing your
                   online visibility, our approach is results-driven and grounded
-                  in expertise.
+                  in expertise
                 </p>
               </div>
 

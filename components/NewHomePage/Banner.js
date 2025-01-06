@@ -188,7 +188,7 @@ const Banner = () => {
           >
             We focus on your most important outcomes – generating leads,
             increasing online sales, growing revenues, and improving keyword
-            rankings.
+            rankings
           </p>
         </div>
       </div>
