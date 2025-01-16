@@ -13,8 +13,8 @@ export const caseStudiesData = [
   {
     id: 2,
     link: "/case-studies/b2b-lead-gen-case-study-delivering-outcomes-with-paid-marketing-for-a-global-retail-giants-csr-project",
-    stats: "93,345",
-    title: "Unique Leads in 12 Months",
+    stats: "300,000",
+    title: "Unique Leads in 3 Years",
     description: "For a Global Retail Corporation's MSME CSR Project  ",
     buttonText: "Read More",
     image: "/images/magnet.svg",
@@ -33,8 +33,8 @@ export const caseStudiesData = [
   {
     id: 4,
     link: "/case-studies/seo-case-study-for-a-global-technology-company-increased-visibility-with-organic-search-results",
-    stats: "201%",
-    title: " Increase in Keyword Ranking with 275+ Keywords on Page One",
+    stats: "287%",
+    title: " Increase in Keyword Ranking with 352 Keywords on Page One",
     description: "SEO Victory for a Global Financial Services Giant",
     buttonText: "Read More",
     image: "/images/search.svg",

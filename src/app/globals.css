@@ -201,6 +201,10 @@ body {
   min-height: 85px;
 }
 
+.custom-txt {
+  font-size: 30px ;
+  font-weight: 800;
+}
 .iv-cards-categories .card-body {
   padding-top: 19px;
 }
@@ -2089,6 +2093,13 @@ background: rgba(255, 255, 255, 0) !important; */
   a.dropdown-item {
     font-size: 18px;
   }
+
+  .custom-txt {
+    font-size: 20px;
+    font-weight: 400;
+  }
+
+
 
   ul.navbar-nav.text-center.flex-grow-1.pe-3 {
     padding: 0px !important;

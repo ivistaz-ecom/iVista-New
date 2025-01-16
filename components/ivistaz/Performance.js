@@ -39,7 +39,6 @@ function Performance() {
           .custom-txt {
             color: #F36669; /* Initial color */
             transition: color 1s ease-in-out;
-            font-size:30px ;
           }
           .active-text_performance {
             color: #FF0000; /* Color when active */
@@ -47,6 +46,7 @@ function Performance() {
           .custom-performance-heading{
           color : #FF0000 ;
           }
+
         `}
       </style>
       <Container className="w-80 mb-5" ref={performanceRef} id="performance">

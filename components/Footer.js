@@ -366,7 +366,7 @@ const NewFooter = () => {
                 target="_blank"
               >
                 <Image
-                  src="/images/linkedin.svg"
+                  src="/images/linkerin_icon.svg"
                   width={43}
                   height={43}
                   className="social"
@@ -378,7 +378,7 @@ const NewFooter = () => {
                 target="_blank"
               >
                 <Image
-                  src="/images/instagram.svg"
+                  src="/images/insta_icon.svg"
                   width={44}
                   height={44}
                   className="social"
@@ -390,9 +390,9 @@ const NewFooter = () => {
                 target="_blank"
               >
                 <Image
-                  src="/images/facebook.svg"
-                  width={40}
-                  height={40}
+                  src="/images/facebook_icon.svg"
+                  width={30}
+                  height={30}
                   className="social"
                   alt=""
                 />
@@ -402,7 +402,7 @@ const NewFooter = () => {
                 target="_blank"
               >
                 <Image
-                  src="/images/twitter.svg"
+                  src="/images/x_icon.svg"
                   width={44}
                   height={44}
                   className="social"
