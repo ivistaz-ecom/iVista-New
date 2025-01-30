@@ -245,7 +245,7 @@ const NewFooter = () => {
                     className="text-white text-decoration-none"
                     href="/industries/technology-IT"
                   >
-                     Tech/IT
+                    Tech/IT
                   </Link>
                 </li>
               </ul>
@@ -287,8 +287,11 @@ const NewFooter = () => {
                   </Link>
                 </li>
                 <li className="mb-2">
-                  <Link className="text-white text-decoration-none" href="/careers">
-                   Careers
+                  <Link
+                    className="text-white text-decoration-none"
+                    href="/careers"
+                  >
+                    Careers
                   </Link>
                 </li>
                 <li className="mb-2">
@@ -340,7 +343,6 @@ const NewFooter = () => {
                     Statement
                   </Link>
                 </li> */}
-              
               </ul>
             </div>
           </div>
@@ -354,14 +356,14 @@ const NewFooter = () => {
       >
         <Container className="text-centre ">
           <Row className="g-0">
-            <Col className="d-flex align-items-center justify-content-center">
+          <Col className="d-flex align-items-center justify-content-center">
               <p className="footer-text">Follow Us:</p>
               <Link
                 href="https://www.linkedin.com/company/ivistawebsolutions/mycompany/"
                 target="_blank"
               >
                 <Image
-                  src="/images/linkedin.svg"
+                  src="/images/linkerin_icon.svg"
                   width={43}
                   height={43}
                   className="social"
@@ -369,39 +371,39 @@ const NewFooter = () => {
                 />
               </Link>
               <Link
-                href="https://www.instagram.com/ivistawebsolutions/"
+                href="https://www.instagram.com/ivistazecomservices/"
                 target="_blank"
               >
                 <Image
-                  src="/images/instagram.svg"
+                  src="/images/insta_icon.svg"
                   width={44}
                   height={44}
                   className="social"
-                  alt=""
+                  alt="instagram"
                 />
               </Link>
               <Link
-                href="https://www.facebook.com/ivistasolutions/"
+                href=" https://www.facebook.com/people/IVistaz-Ecom-Services/61564957311627/"
                 target="_blank"
               >
                 <Image
-                  src="/images/facebook.svg"
-                  width={40}
-                  height={40}
+                  src="/images/facebook_icon.svg"
+                  width={30}
+                  height={30}
                   className="social"
-                  alt=""
+                  alt="facebook"
                 />
               </Link>
               <Link
-                href="https://twitter.com/ivistasolutions?lang=en"
+                href="https://x.com/ivistazecom"
                 target="_blank"
               >
                 <Image
-                  src="/images/twitter.svg"
+                  src="/images/x_icon.svg"
                   width={44}
                   height={44}
                   className="social"
-                  alt=""
+                  alt="X"
                 />
               </Link>
             </Col>
@@ -440,5 +442,3 @@ const NewFooter = () => {
 };
 
 export default NewFooter;
-
-

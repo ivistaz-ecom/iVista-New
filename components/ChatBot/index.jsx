@@ -30,7 +30,7 @@ const CollectChatScript = () => {
         {`
           #chat-bot-launcher-container.chat-bot-avatar-launcher, #chat-bot-launcher-container.chat-bot-launcher-notext {
                 z-index: 5;
-                top: 75%;
+                top: 83%;
                 padding: 20px ;
           }
 
@@ -41,8 +41,8 @@ const CollectChatScript = () => {
 
         @media(max-width:767px) {
           #chat-bot-launcher-container.chat-bot-avatar-launcher, #chat-bot-launcher-container.chat-bot-launcher-notext {
-                z-index: 3;
-                top: 83%;
+                z-index: 5;
+                top: 65%;
                 padding: 20px ;
                 padding-top: 45px;
                 padding-bottom: 45px;

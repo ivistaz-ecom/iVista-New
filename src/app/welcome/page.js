@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Container } from "react-bootstrap";
 import Header1 from "../../../components/HeaderBlack";
 import NweHomePage from "../../../components/NewHomePage";
-import NewFooter from "../../../components/NewFooter";
+import Footer from "../../../components/Footer";
 
 
 function page() {
@@ -27,7 +27,7 @@ function page() {
       <Header1 />
       <Container className="bg-white p-0" fluid>
         <NweHomePage />
-        <NewFooter />
+        <Footer />
       </Container>
     </>
   );

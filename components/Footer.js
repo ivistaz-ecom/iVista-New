@@ -374,7 +374,7 @@ const NewFooter = () => {
                 />
               </Link>
               <Link
-                href="https://www.instagram.com/ivistawebsolutions/"
+                href="https://www.instagram.com/ivistazecomservices/"
                 target="_blank"
               >
                 <Image
@@ -382,11 +382,11 @@ const NewFooter = () => {
                   width={44}
                   height={44}
                   className="social"
-                  alt=""
+                  alt="instagram"
                 />
               </Link>
               <Link
-                href="https://www.facebook.com/ivistasolutions/"
+                href=" https://www.facebook.com/people/IVistaz-Ecom-Services/61564957311627/"
                 target="_blank"
               >
                 <Image
@@ -394,11 +394,11 @@ const NewFooter = () => {
                   width={30}
                   height={30}
                   className="social"
-                  alt=""
+                  alt="facebook"
                 />
               </Link>
               <Link
-                href="https://twitter.com/ivistasolutions?lang=en"
+                href="https://x.com/ivistazecom"
                 target="_blank"
               >
                 <Image
@@ -406,7 +406,7 @@ const NewFooter = () => {
                   width={44}
                   height={44}
                   className="social"
-                  alt=""
+                  alt="X"
                 />
               </Link>
             </Col>
