@@ -130,10 +130,12 @@ const BlogsPageComponents = () => {
 
           {/* Load More Button */}
           {visibleCount < data.length && (
-            <div className="text-center mt-4">
-              <button type="button" className="btn btn-15 my-2" onClick={handleLoadMore}>Load More</button>
-            </div>
-          )}
+  <div className="text-center mt-4" style={{ display: "flex", justifyContent: "center" }}>
+    <button type="button" className="btn btn-15 my-2" onClick={handleLoadMore}>Load More</button>
+  </div>
+)}
+
+
         </Container>
       </Container>
     </>
