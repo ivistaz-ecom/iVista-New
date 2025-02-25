@@ -134,6 +134,8 @@ const BlogsPageComponents = () => {
     <button type="button" className="btn btn-15 my-2" onClick={handleLoadMore}>Load More</button>
   </div>
 )}
+
+
         </Container>
       </Container>
     </>
