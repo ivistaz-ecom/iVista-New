@@ -1,33 +1,61 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { Col, Row, Container, Image } from "react-bootstrap";
-import Header1 from "../HeaderBlack";
+import { Col, Row, Container, Image, Button } from "react-bootstrap";
 import { FaArrowRight } from "react-icons/fa";
-import Link from 'next/link'
-
+import Link from "next/link";
 import ConfigData from "../../config";
 
-const BlogsPageComponets = () => {
+const BlogsPageComponents = () => {
   const siteUrl = ConfigData.wpApiUrl;
   const serverUrl = ConfigData.SERVER;
-  const [data, setData] = useState(null); // Initialize data state with null initially
+  const [data, setData] = useState([]); // Store all blogs
+  const [visibleData, setVisibleData] = useState([]); // Store blogs that are currently visible
+  const [loading, setLoading] = useState(true);
+  const [visibleCount, setVisibleCount] = useState(6); // Number of posts initially visible
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(
-          `${siteUrl}/blogs?_embed&production_mode[]=${serverUrl}`
-        );
-        const data = await response.json();
-        setData(data);
-        // console.log(data);
+        let allData = [];
+        let page = 1;
+        let hasMore = true;
+
+        while (hasMore) {
+          const response = await fetch(
+            `${siteUrl}/blogs?_embed&production_mode[]=${serverUrl}&per_page=100&page=${page}`
+          );
+
+          if (response.ok) {
+            const pageData = await response.json();
+            if (pageData.length > 0) {
+              allData = [...allData, ...pageData];
+              page++;
+            } else {
+              hasMore = false;
+            }
+          } else {
+            hasMore = false;
+          }
+        }
+
+        setData(allData);
+        setVisibleData(allData.slice(0, 6)); // Initially show 6 items
       } catch (error) {
         console.error("Error fetching data:", error);
+      } finally {
+        setLoading(false);
       }
     };
 
     fetchData();
-  }, [siteUrl, serverUrl]); // Include dependencies in useEffect dependency array
+  }, [siteUrl, serverUrl]);
+
+  // Load more function
+  const handleLoadMore = () => {
+    const newVisibleCount = visibleCount + 6;
+    setVisibleData(data.slice(0, newVisibleCount));
+    setVisibleCount(newVisibleCount);
+  };
 
   return (
     <>
@@ -46,8 +74,10 @@ const BlogsPageComponets = () => {
 
         <Container className="w-80">
           <Row className="d-flex flex-lg-row flex-column">
-            {data ? ( // Check if data is available
-              data.map((post) => (
+            {loading ? (
+              <div>Loading...</div>
+            ) : visibleData.length > 0 ? (
+              visibleData.map((post) => (
                 <Col
                   lg={4}
                   className="d-flex flex-column p-3 gap-2"
@@ -56,7 +86,7 @@ const BlogsPageComponets = () => {
                   <div className="iv-cards d-flex flex-column h-100">
                     <Image
                       loading="lazy"
-                      src={post.acf.thumbnail_image.url}
+                      src={post.acf?.thumbnail_image?.url}
                       alt={post.title.rendered}
                       className="w-100"
                       height={220}
@@ -71,7 +101,10 @@ const BlogsPageComponets = () => {
 
                         <div className="mt-3 d-flex justify-content-between align-items-center">
                           <div>
-                            <Link href={`/blogs/${post.slug}`} className="iv-link">
+                            <Link
+                              href={`/blogs/${post.slug}`}
+                              className="iv-link"
+                            >
                               Read more{" "}
                               <FaArrowRight className="icons" size="25" />
                             </Link>
@@ -81,7 +114,6 @@ const BlogsPageComponets = () => {
                               {new Date(post.date).toLocaleDateString("en-US", {
                                 year: "numeric",
                                 month: "long",
-                                // day: 'numeric'
                               })}
                             </p>
                           </div>
@@ -92,13 +124,20 @@ const BlogsPageComponets = () => {
                 </Col>
               ))
             ) : (
-              <div className="">Loading...</div> // Render loading message while data is being fetched
+              <div>No blogs found.</div>
             )}
           </Row>
+
+          {/* Load More Button */}
+          {visibleCount < data.length && (
+            <div className="text-center mt-4">
+              <button type="button" className="btn btn-15 my-2" onClick={handleLoadMore}>Load More</button>
+            </div>
+          )}
         </Container>
       </Container>
     </>
   );
 };
 
-export default BlogsPageComponets;
+export default BlogsPageComponents;
