@@ -92,7 +92,7 @@ const OurTeamsList = () => {
         <Container className="w-80 custom-container">
           <h1 className="text-white fs-70 fw-bold d-inline-block">
             {/* MEET THE TEAM */}
-            MEET OUR TEAM
+            Meet Our Team
           </h1>
 
           {/* CLIENT SERVICING */}

@@ -353,7 +353,7 @@ function Header1({ setChatVisible }) {
                 />
               </Link>
               <Link
-                href="https://www.instagram.com/ivistawebsolutions/"
+                href="https://www.instagram.com/ivistazecomservices/"
                 target="_blank"
               >
                 <Image
@@ -365,7 +365,7 @@ function Header1({ setChatVisible }) {
                 />
               </Link>
               <Link
-                href="https://www.facebook.com/ivistasolutions/"
+                href="https://www.facebook.com/people/IVistaz-Ecom-Services/61564957311627/"
                 target="_blank"
               >
                 <Image
