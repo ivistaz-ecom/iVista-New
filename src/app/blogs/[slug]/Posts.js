@@ -4,26 +4,44 @@ import { CiCircleChevRight } from "react-icons/ci";
 import Link from 'next/link';
 import ConfigData from '../../../../config'
 import { Container, Image } from 'react-bootstrap';
+import PageNotFound from "../../[service]/page"; 
 
 const Posts = ({ slug }) => {
     const siteUrl = ConfigData.wpApiUrl;
     const [data, setData] = useState(null); // Initialize data state with null initially
     const [loading, setLoading] = useState(true); // Track loading state
     const serverUrl = ConfigData.SERVER;
+    const [notFound, setNotFound] = useState(false); // Track 404 state
   
     useEffect(() => {
         const fetchData = async () => {
-            try {
-                const response = await fetch(`${siteUrl}/blogs?_embed&slug=${slug}`);
-                const data = await response.json();
-                setData(data);
-                console.log(data);
-            } catch (error) {
-                console.error('Error fetching data:', error);
+          try {
+            const response = await fetch(`${siteUrl}/blogs?_embed&slug=${slug}`);
+            if (!response.ok) {
+              throw new Error("Post not found");
             }
+            const jsonData = await response.json();
+    
+            if (jsonData.length === 0) {
+              setNotFound(true); // If no post is found, set 404 state
+            } else {
+              setData(jsonData);
+            }
+          } catch (error) {
+            console.error("Error fetching data:", error);
+            setNotFound(true);
+          } finally {
+            setLoading(false);
+          }
         };
         fetchData();
-    }, [siteUrl, serverUrl, slug]);
+      }, [siteUrl, serverUrl, slug]);
+    
+
+      // Show 404 Page if the post is not found
+  if (notFound) {
+    return <PageNotFound />;
+  }
 
     return (
         <>
