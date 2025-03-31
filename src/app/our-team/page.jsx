@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
-import OurTeamComponents from "../../../components/OurTeamComponents";
+// import OurTeamComponents from "../../../components/OurTeamComponents";
+import OurTeamComponents from "../../../components/OurTeamGhibliComponents";
 import SeoComponents from "../../../components/SeoComponents/Seo";
 import { usePathname } from "next/navigation";
 import { useState } from "react";

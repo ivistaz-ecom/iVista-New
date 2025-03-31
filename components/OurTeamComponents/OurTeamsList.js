@@ -434,7 +434,7 @@ const OurTeamsList = () => {
                 </div>
               </>
             )}
-          </Col>
+          </Col> 
         </Container>
       </Container>
     </div>
