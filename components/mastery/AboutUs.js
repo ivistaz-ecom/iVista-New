@@ -9,16 +9,17 @@ function HeroBanner() {
     setShowMore(!showMore);
   };
 
+   
   return (
     <>
-      <ScrollAnimationIOthers />
+      {/* <ScrollAnimationIOthers /> */}
       <Container className="bg-white banner w-80 pb-5 mb-4 z-3 p-0">
         <Row className="d-flex align-items-start p-0 custom_height">
           <article>
             <div className="timeline2">
               <Col lg={12} className="mt-5 position-relative">
                 <div className="timeline-badge2 mt-lg-3"></div>
-                <div className="ps-6">
+                <div className="md-px-5 px-4">
                   <h1 className="fs-19 fw-bold red">About Us</h1>
                   <p className="para-text pe-lg-2 pe-3">
                     We started young. We knew that the digital age was dawning
