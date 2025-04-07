@@ -141,8 +141,8 @@ const OurServices = () => {
                         writing-mode: horizontal-tb;
                         width: auto;
                         height: auto;
-                        padding: 0.5rem 1rem;
-                        font-size: 0.85rem;
+                        padding: 0.6rem 1rem;
+                        font-size: 0.75rem;
                         margin-bottom: 0.5rem;
                         rotate: 0deg;
                         justify-content: center;
@@ -164,7 +164,7 @@ const OurServices = () => {
 
             <Container fluid className="p-md-5 p-3 bg-white">
                 {/* Mobile Tabs */}
-                <Row className="d-md-none d-flex mobile-tab-row gap-1 p-3">
+                <Row className="d-md-none d-flex mobile-tab-row gap-1 p-3 mx-auto justify-content-start">
                     {TechIndustryData.map((service, index) => (
                         <Button
                             key={index}

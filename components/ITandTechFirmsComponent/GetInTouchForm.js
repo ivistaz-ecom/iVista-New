@@ -267,7 +267,7 @@ const ContactForm = () => {
                     </div>
 
                     <div className="mt-4 d-flex justify-content-center">
-                        <Button className="btn-15" type="submit" disabled={loading}>Submit</Button>
+                        <Button className="btn-15 z-3" type="submit" disabled={loading}>Submit</Button>
                     </div>
                 </Form>
             ) : (
