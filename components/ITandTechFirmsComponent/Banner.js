@@ -25,7 +25,7 @@ const Banner = () => {
         muted
         playsInline
         className="w-100 d-block d-md-none"
-        style={{ height: '100vh', objectFit: 'cover' }}
+        style={{ height: '100vh', objectFit: '' }}
       >
         <source src="/videos/tech-landing-banner-mobile.mp4" type="video/mp4" />
         Your browser does not support the video tag.
