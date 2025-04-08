@@ -27,8 +27,8 @@ const Banner = () => {
           loop
           muted
           playsInline
-          className="w-100 h-100 d-block d-md-none mt-3"
-          style={{ objectFit: 'cover' }}
+          className="w-100 h-100 d-block d-md-none"
+          style={{ objectFit: '' }}
         >
           <source src="/videos/tech_solution_banner_mobile_video.mp4" type="video/mp4" />
           Your browser does not support the video tag.

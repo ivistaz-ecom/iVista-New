@@ -95,7 +95,7 @@ const DigitalMarketing = () => {
             <div className="pt-md-5 bg-white" style={{ zIndex: 1 }}>
                 <Container>
                     {/* Desktop view */}
-                    <h2 className="d-none d-lg-block custome-h2 text-uppercase text-center mb-3" style={{ fontSize: '4rem', fontWeight:'900' }}>
+                    <h2 className="d-none d-lg-block custome-h2 text-uppercase text-center mb-3" style={{ fontSize: '4rem', fontWeight: '900' }}>
                         Digital Marketing <br />For the GenAI Era
                     </h2>
 
