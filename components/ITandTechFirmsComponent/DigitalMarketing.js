@@ -73,24 +73,34 @@ const DigitalMarketing = () => {
         color: white !important;
         border-color: #FF0000 !important;
     }
-        .custome-flip-btn:hover .flip-icon,
-.bg-light.text-danger:hover .flip-icon {
-    color: white !important;
+    .custome-flip-btn:hover .flip-icon,
+    .bg-light.text-danger:hover .flip-icon {
+        color: white !important;
+    }
+    .custome-txt-red{
+        color: #FF0000;
+        }
+    .custome-txt-red:hover{
+        color: white !important;
+        background-color: #FF0000 !important;
+    }
+    .bg-light.custome-txt-red:hover .flip-icon {
+         color: white !important;
 }
-    
+
 
 `}</style>
 
 
-            <div className="pt-5">
+            <div className="pt-5 bg-white" style={{ zIndex: 1 }}>
                 <Container>
                     {/* Desktop view */}
-                    <h2 className="d-none d-lg-block custome-h2 fw-bold text-uppercase text-center mb-3" style={{ fontSize: '2.5rem' }}>
+                    <h2 className="d-none d-lg-block custome-h2 text-uppercase text-center mb-3" style={{ fontSize: '4rem', fontWeight:'900' }}>
                         Digital Marketing <br />For the GenAI Era
                     </h2>
 
                     {/* Mobile view */}
-                    <h2 className="d-block d-lg-none custome-h2 fw-bold text-uppercase text-center mb-2" style={{ fontSize: '1.5rem' }}>
+                    <h2 className="d-block d-lg-none custome-h2 fw-bold text-uppercase text-center mb-2" style={{ fontSize: '2rem' }}>
                         Digital Marketing <br />For the GenAI Era
                     </h2>
 
@@ -106,34 +116,30 @@ const DigitalMarketing = () => {
                         alt="Background"
                         fill
                         priority
-                        className="object-cover w-100 h-100 position-absolute top-0 start-0"
-                        style={{ zIndex: -2 }}
+                        className="object-cover w-100 h-100 position-absolute top-0 start-0 z-5"
+                        style={{ zIndex: 0 }}
                     />
                     <div
                         className="position-absolute top-0 start-0 w-100 h-100"
-                        style={{ backgroundColor: 'rgba(0, 0, 0, 0.7)', zIndex: -1 }}
+                        style={{ backgroundColor: 'rgba(0, 0, 0, 0.7)', zIndex: 1 }}
                     />
 
-                    <Container className="h-100 d-flex align-items-center mx-auto justify-content-center">
+                    <Container className="h-100 d-flex align-items-center mx-auto justify-content-center position-relative" style={{ zIndex: 2 }}>
                         <Row className="position-relative w-100">
+                            <Col md={1}></Col>
                             <Col md={4}>
                                 {Object.keys(contentData).map((key) => (
                                     <Button
                                         key={key}
-                                        className={`fs-4 d-flex justify-content-between align-items-center w-100 mb-3 fw-bold rounded-4 py-3 px-4 border border-danger ${selected === key ? 'custome-flip-btn' : 'bg-light text-danger'}`}
+                                        className={`fs-4 d-flex justify-content-between align-items-center w-100 mb-3 fw-bold rounded-4 py-3 px-4 border border-danger ${selected === key ? 'custome-flip-btn' : 'bg-light custome-txt-red'}`}
                                         onClick={() => handleButtonClick(key)}
                                     >
                                         {key}
-                                        <FaArrowCircleRight
-                                            className={`flip-icon ms-auto fs-5 ${selected === key ? 'text-white' : 'text-danger'}`}
-                                        />
-
+                                        <FaArrowCircleRight className="flip-icon ms-auto fs-5" />
                                     </Button>
-
                                 ))}
                             </Col>
-                            <Col md={1}></Col>
-                            <Col md={1}></Col>
+
 
                             <Col md={6} className="m-auto">
                                 <div className={`flip-box ${!showFront ? 'flipped' : ''}`} style={{ height: '300px' }}>

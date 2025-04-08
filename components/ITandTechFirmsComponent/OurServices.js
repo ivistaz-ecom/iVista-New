@@ -88,6 +88,25 @@ const OurServices = () => {
     return (
         <>
             <style>{`
+             .our-service-tab {
+                    writing-mode: vertical-lr;
+                    text-orientation: mixed;
+                    color:  #FF0000;
+                    border-radius: 20px;
+                    font-weight: bold;
+                    font-size: 48px;
+                    border: none;
+                    white-space: nowrap;
+                    transition: all 0.3s ease;
+                    width: 20px;
+                    height: 400px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: start;
+                    text-align: center;
+                    text-transform: uppercase;
+                    rotate: 180deg;
+                }
                 .service-tab {
                     writing-mode: vertical-lr;
                     text-orientation: mixed;
@@ -101,7 +120,7 @@ const OurServices = () => {
                     white-space: nowrap;
                     transition: all 0.3s ease;
                     width: 50px;
-                    height: 400px;
+                    height: 500px;
                     display: flex;
                     align-items: center;
                     justify-content: start;
@@ -116,13 +135,34 @@ const OurServices = () => {
                 }
 
                 .content-box {
-                    border: 1px solid #f5bfbf;
+                    border: 1px solid #FF0000;
                     border-radius: 20px;
                     box-shadow: 0 0 10px rgba(255, 0, 0, 0.05);
-                    height: 100%;
+                    height: 500px;
                     animation: fadeSlideIn 0.5s ease;
                     min-width: 500px;
                     max-width: 900px;
+                }
+                    
+
+             :root {
+                --custom-red:  #FF0000;
+                }
+
+                .service-tab.active-tab {
+                background-color: var(--custom-red) !important;
+                color: white !important;
+                box-shadow: 0 0 10px rgba(255, 0, 0, 0.2);
+                }
+
+                .custom-red-text {
+                color: var(--custom-red) !important;
+                }
+                .custom-red-bg {
+                background-color: var(--custom-red) !important;
+                }
+                .border-right-dotted-red {
+                border-right: 2px dotted #FF0000 !important;
                 }
 
                 @keyframes fadeSlideIn {
@@ -148,6 +188,17 @@ const OurServices = () => {
                         justify-content: center;
                         text-align: center;
                     }
+                        .our-service-tab {
+                        writing-mode: horizontal-tb;
+                        width: auto;
+                        height: auto;
+                        padding: 0.6rem 1rem;
+                        font-size: 2rem;
+                        margin-bottom: 0.5rem;
+                        rotate: 0deg !important;
+                        justify-content: center;
+                        text-align: center;
+                    }
                     .service-tabs-container {
                         flex-direction: row !important;
                         flex-wrap: wrap;
@@ -157,23 +208,24 @@ const OurServices = () => {
                     .content-box {
                         min-width: 100% !important;
                         max-width: 100% !important;
+                        height: auto !important;
                     }
-                        
-                }
+
+
             `}</style>
 
             <Container fluid className="p-md-5 p-3 bg-white">
                 {/* Mobile Tabs */}
+                <p className=" d-md-none d-flex our-service-tab" >Our Services</p>
                 <Row className="d-md-none d-flex mobile-tab-row gap-1 p-3 mx-auto justify-content-start">
                     {TechIndustryData.map((service, index) => (
-                        <Button
-                            key={index}
-                            className="service-tab"
-                            variant={activeIndex === index ? 'danger' : 'dark'}
-                            onClick={() => setActiveIndex(index)}
-                        >
-                            {service.buttonText}
-                        </Button>
+                       <Button
+                       key={index}
+                       className={`service-tab ${activeIndex === index ? 'active-tab' : ''}`}
+                       onClick={() => setActiveIndex(index)}
+                   >
+                       {service.buttonText}
+                   </Button>
                     ))}
                 </Row>
 
@@ -183,7 +235,7 @@ const OurServices = () => {
                         <div className="content-box p-4">
                             {TechIndustryData[activeIndex].type === 'basic' && (
                                 <>
-                                    <h4 className="text-danger fw-bold fs-4">
+                                    <h4 className="custom-red-text fw-bold fs-4">
                                         {TechIndustryData[activeIndex].contentTitle}
                                     </h4>
                                     <h5 className="fw-semibold mt-3">{TechIndustryData[activeIndex].subtitle}</h5>
@@ -199,15 +251,15 @@ const OurServices = () => {
 
                             {TechIndustryData[activeIndex].type === 'aiSeo' && (
                                 <>
-                                    <h4 className="text-danger fw-bold fs-4">
+                                    <h4 className="custom-red-text fw-bold fs-4">
                                         {TechIndustryData[activeIndex].highlightTitle}
                                     </h4>
                                     <h5 className="mt-3">{TechIndustryData[activeIndex].mainText}</h5>
-                                    <p className="text-danger">{TechIndustryData[activeIndex].highlightNote}</p>
+                                    <p className="custom-red-text">{TechIndustryData[activeIndex].highlightNote}</p>
                                     <Row>
                                         {TechIndustryData[activeIndex].features.map((feature, idx) => (
                                             <Col xs={12} key={idx} className="mb-3">
-                                                <h6 className="text-danger fw-semibold">{feature.heading}</h6>
+                                                <h6 className="custom-red-text fw-semibold">{feature.heading}</h6>
                                                 <p>{feature.text}</p>
                                             </Col>
                                         ))}
@@ -220,20 +272,33 @@ const OurServices = () => {
 
                 {/* Desktop Tabs + Content */}
                 <Row className="d-none d-md-flex justify-content-center align-items-center flex-wrap gap-3">
+                    <p className="our-service-tab" >Our Services</p>
                     {/* Tabs before */}
                     {TechIndustryData.map((service, index) =>
                         index < activeIndex ? (
-                            <Button key={index} className="service-tab" onClick={() => setActiveIndex(index)}>
+                            <Button
+                                key={index}
+                                className={`service-tab ${activeIndex === index ? 'active-tab' : ''}`}
+
+                                onClick={() => setActiveIndex(index)}
+                            >
                                 {service.buttonText}
                             </Button>
                         ) : null
                     )}
+                    {/* Active Tab */}
+                    <Button
+                        className="service-tab custom-red-bg text-white"
+                        onClick={() => setActiveIndex(activeIndex)}
+                    >
+                        {TechIndustryData[activeIndex].buttonText}
+                    </Button>
 
                     {/* Content Box */}
                     <div className="content-box p-4" key={activeIndex}>
                         {TechIndustryData[activeIndex].type === 'basic' && (
                             <>
-                                <h4 className="text-danger fw-bold fs-2">
+                                <h4 className="custom-red-text fw-bold fs-1">
                                     {TechIndustryData[activeIndex].contentTitle}
                                 </h4>
                                 <h5 className="fw-semibold mt-3">{TechIndustryData[activeIndex].subtitle}</h5>
@@ -246,24 +311,33 @@ const OurServices = () => {
                                 </ul>
                             </>
                         )}
+                        {TechIndustryData[activeIndex].type === 'aiSeo' &&
+                            Array.isArray(TechIndustryData[activeIndex].features) && (
+                                <>
+                                    <h4 className="custom-red-text fw-bold fs-1">
+                                        {TechIndustryData[activeIndex].highlightTitle}
+                                    </h4>
+                                    <h5 className="mt-3">{TechIndustryData[activeIndex].mainText}</h5>
+                                    <p className="custom-red-text py-2">{TechIndustryData[activeIndex].highlightNote}</p>
+                                    <Row>
 
-                        {TechIndustryData[activeIndex].type === 'aiSeo' && (
-                            <>
-                                <h4 className="text-danger fw-bold fs-2">
-                                    {TechIndustryData[activeIndex].highlightTitle}
-                                </h4>
-                                <h5 className="mt-3">{TechIndustryData[activeIndex].mainText}</h5>
-                                <p className="text-danger">{TechIndustryData[activeIndex].highlightNote}</p>
-                                <Row>
-                                    {TechIndustryData[activeIndex].features.map((feature, idx) => (
-                                        <Col md={3} key={idx} className="mb-4">
-                                            <h6 className="text-danger fw-semibold">{feature.heading}</h6>
-                                            <p>{feature.text}</p>
-                                        </Col>
-                                    ))}
-                                </Row>
-                            </>
-                        )}
+                                        {TechIndustryData[activeIndex].features.map((feature, idx, arr) => {
+                                            const isLast = idx === arr.length - 1;
+                                            const borderClass = !isLast ? 'border-right-dotted-red' : '';
+
+                                            return (
+                                                <Col md={3} key={idx} className={`mb-4 px-3 ${borderClass}`}>
+                                                    <h6 className="custom-red-text pb-2 fw-semibold">{feature.heading}</h6>
+                                                    <p>{feature.text}</p>
+                                                </Col>
+                                            );
+                                        })}
+                                    </Row>
+
+
+                                </>
+                            )}
+
                     </div>
 
                     {/* Tabs after */}
@@ -281,3 +355,4 @@ const OurServices = () => {
 };
 
 export default OurServices;
+

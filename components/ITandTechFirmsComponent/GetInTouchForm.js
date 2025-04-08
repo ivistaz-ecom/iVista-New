@@ -152,8 +152,10 @@ const ContactForm = () => {
     };
 
     return (
-        <Container className="py-5 form-container">
-            <style jsx>{`
+        <div className='bg-white'>
+            <Container className="py-5 form-container bg-white">
+
+                <style jsx>{`
                 .form-container {
                     background: #fff;
                     border-radius: 20px;
@@ -162,10 +164,10 @@ const ContactForm = () => {
                     box-shadow: 0 5px 20px rgba(0,0,0,0.05);
                 }
                 .form-title {
-                    font-size: 36px;
+                    font-size: 48px;
                     font-weight: 800;
                     text-align: center;
-                    color: #e53935;
+                    color: #FF0000 ;
                     margin-bottom: 10px;
                 }
                 .form-subtitle {
@@ -177,107 +179,124 @@ const ContactForm = () => {
                     border-radius: 10px;
                     height: 50px;
                 }
-                .btn-15 {
-                    background-color: #e53935;
-                    color: white;
-                    font-weight: 600;
-                    border-radius: 10px;
-                    padding: 10px 30px;
-                    transition: 0.3s ease;
+                .border-red {
+                    border-color: #FF0000 !important;
                 }
-                .btn-15:hover {
-                    background-color: #c62828;
+                
+                /* Make checkboxes and radio buttons red */
+                input[type="radio"]:checked + label::before,
+                input[type="checkbox"]:checked + label::before {
+                    border-color: #FF0000;
+                    background-color: #FF0000;
+                }
+
+                /* For Bootstrap-styled checkboxes/radios */
+                .form-check-input:checked {
+                    background-color: #FF0000;
+                    border-color: #FF0000;
+                }
+
+                .form-check-input:focus {
+                    box-shadow: 0 0 0 0.2rem rgba(255, 0, 0, 0.25);
+                    border-color: #FF0000;
+                }
+
+                  @media (max-width: 768px) {
+                  .form-title {
+                      font-size: 2rem;
+                  }
                 }
             `}</style>
 
-            {!submitted ? (
-                <Form onSubmit={handleSubmit}>
-                    <div className="border rounded rounded-5 p-5 shadow-lg">
-                        <h2 className="form-title">READY TO SCALE YOUR GROWTH?</h2>
-                        <p className="form-subtitle">
-                            Let’s drive predictable revenue and sustainable growth with AI-powered marketing.
-                            <br />
-                            Get in touch today and start seeing results within weeks.
-                        </p>
-                        <Row className="g-3">
-                            <Col md={6}>
-                                <Form.Control type="text" name="yourFirstName" placeholder="First Name" value={yourFirstName} onChange={handleTextChange} isInvalid={!!errors.yourFirstName} required />
-                                <Form.Control.Feedback type="invalid">{errors.yourFirstName}</Form.Control.Feedback>
-                            </Col>
-                            <Col md={6}>
-                                <Form.Control type="text" name="yourLastName" placeholder="Last Name" value={yourLastName} onChange={handleTextChange} isInvalid={!!errors.yourLastName} required />
-                                <Form.Control.Feedback type="invalid">{errors.yourLastName}</Form.Control.Feedback>
-                            </Col>
-                            <Col md={6}>
-                                <Form.Control type="text" name="yourJobTitle" placeholder="Job Title" value={yourJobTitle} onChange={handleTextChange} required />
-                            </Col>
-                            <Col md={6}>
-                                <Form.Control type="text" name="yourCompany" placeholder="Company" value={yourCompany} onChange={handleTextChange} required />
-                            </Col>
-                            <Col md={6}>
-                                <Form.Control type="email" name="yourEmail" placeholder="Official Email ID" value={yourEmail} onChange={handleTextChange} isInvalid={!!errors.yourEmail} required />
-                                <Form.Control.Feedback type="invalid">{errors.yourEmail}</Form.Control.Feedback>
-                            </Col>
-                            <Col md={6}>
-                                <Form.Control type="text" name="yourPhone" placeholder="Phone Number" value={yourPhone} maxLength="10" onChange={handleTextChange} isInvalid={!!errors.yourPhone} required />
-                                <Form.Control.Feedback type="invalid">{errors.yourPhone}</Form.Control.Feedback>
-                            </Col>
-                        </Row>
-                    </div>
+                {!submitted ? (
+                    <Form onSubmit={handleSubmit}>
+                        <div className="border rounded rounded-5 p-md-5 p-4 shadow mb-5 border border-red">
+                            <h2 className="form-title">READY TO SCALE YOUR GROWTH?</h2>
+                            <p className="form-subtitle">
+                                Let’s drive predictable revenue and sustainable growth with AI-powered marketing.
+                                <br />
+                                Get in touch today and start seeing results within weeks.
+                            </p>
+                            <Row className="g-3">
+                                <Col md={6}>
+                                    <Form.Control type="text" name="yourFirstName" placeholder="First Name" value={yourFirstName} onChange={handleTextChange} isInvalid={!!errors.yourFirstName} required />
+                                    <Form.Control.Feedback type="invalid">{errors.yourFirstName}</Form.Control.Feedback>
+                                </Col>
+                                <Col md={6}>
+                                    <Form.Control type="text" name="yourLastName" placeholder="Last Name" value={yourLastName} onChange={handleTextChange} isInvalid={!!errors.yourLastName} required />
+                                    <Form.Control.Feedback type="invalid">{errors.yourLastName}</Form.Control.Feedback>
+                                </Col>
+                                <Col md={6}>
+                                    <Form.Control type="text" name="yourJobTitle" placeholder="Job Title" value={yourJobTitle} onChange={handleTextChange} required />
+                                </Col>
+                                <Col md={6}>
+                                    <Form.Control type="text" name="yourCompany" placeholder="Company" value={yourCompany} onChange={handleTextChange} required />
+                                </Col>
+                                <Col md={6}>
+                                    <Form.Control type="email" name="yourEmail" placeholder="Official Email ID" value={yourEmail} onChange={handleTextChange} isInvalid={!!errors.yourEmail} required />
+                                    <Form.Control.Feedback type="invalid">{errors.yourEmail}</Form.Control.Feedback>
+                                </Col>
+                                <Col md={6}>
+                                    <Form.Control type="text" name="yourPhone" placeholder="Phone Number" value={yourPhone} maxLength="10" onChange={handleTextChange} isInvalid={!!errors.yourPhone} required />
+                                    <Form.Control.Feedback type="invalid">{errors.yourPhone}</Form.Control.Feedback>
+                                </Col>
+                            </Row>
+                        </div>
 
-                    <div className="border rounded-5 p-5 mt-4 shadow-lg">
-                        <h4 className="text-red text-center fs-1 fw-bold mb-4">WHAT WOULD YOU LIKE?</h4>
-                        <Row>
-                            <Col md={6}>
-                                <Form.Check
-                                    type="radio"
-                                    label={<><strong>A complimentary audit of your website -</strong> Analyze your site’s performance, UX, and SEO with our expert insights & recommendations</>}
-                                    value="Website Audit"
-                                    checked={whatWouldYouLike === 'Website Audit'}
-                                    onChange={(e) => handleCheckboxChange(e, whatWouldYouLike, setWhatWouldYouLike, true)}
-                                />
-                            </Col>
-                            <Col md={6}>
-                                <Form.Check
-                                    type="radio"
-                                    label={<><strong>A complimentary thought leadership piece -</strong> tailored to your industry</>}
-                                    value="Thought Leadership Piece"
-                                    checked={whatWouldYouLike === 'Thought Leadership Piece'}
-                                    onChange={(e) => handleCheckboxChange(e, whatWouldYouLike, setWhatWouldYouLike, true)}
-                                />
-                            </Col>
-                        </Row>
-                        {errors.whatWouldYouLike && <div className="text-danger mt-3">{errors.whatWouldYouLike}</div>}
-                    </div>
+                        <div className="border rounded-5 p-md-5 p-4  mt-4 shadow mb-5">
+                            <h4 className="form-title text-center fw-bold mb-4">WHAT WOULD YOU LIKE?</h4>
+                            <Row>
+                                <Col md={6}>
+                                    <Form.Check
+                                        type="radio"
+                                        label={<><strong>A complimentary audit of your website -</strong> Analyze your site’s performance, UX, and SEO with our expert insights & recommendations</>}
+                                        value="Website Audit"
+                                        checked={whatWouldYouLike === 'Website Audit'}
+                                        onChange={(e) => handleCheckboxChange(e, whatWouldYouLike, setWhatWouldYouLike, true)}
+                                    />
+                                </Col>
+                                <Col md={6}  className='pt-3'>
+                                    <Form.Check
+                                        type="radio"
+                                        label={<><strong>A complimentary thought leadership piece -</strong> tailored to your industry</>}
+                                        value="Thought Leadership Piece"
+                                        checked={whatWouldYouLike === 'Thought Leadership Piece'}
+                                        onChange={(e) => handleCheckboxChange(e, whatWouldYouLike, setWhatWouldYouLike, true)}
+                                    />
+                                </Col>
+                            </Row>
+                            {errors.whatWouldYouLike && <div className="text-danger mt-3">{errors.whatWouldYouLike}</div>}
+                        </div>
 
-                    <div className="border rounded-5 p-5 mt-4 shadow-lg">
-                        <h4 className="text-red text-center fs-1 fw-bold mb-2">WHAT IS YOUR CHALLENGE</h4>
-                        <p className="text-muted text-center mb-4">(Select All That Apply)</p>
-                        <Row>
-                            <Col md={6}>
-                                <Form.Check label="Generating consistent pipeline" value="Generating consistent pipeline" onChange={(e) => handleCheckboxChange(e, yourChallenges, setYourChallenges)} />
-                                <Form.Check label="Low conversion rate" value="Low conversion rate" onChange={(e) => handleCheckboxChange(e, yourChallenges, setYourChallenges)} />
-                            </Col>
-                            <Col md={6}>
-                                <Form.Check label="Lack of thought leadership" value="Lack of thought leadership" onChange={(e) => handleCheckboxChange(e, yourChallenges, setYourChallenges)} />
-                                <Form.Check label="Low brand awareness" value="Low brand awareness" onChange={(e) => handleCheckboxChange(e, yourChallenges, setYourChallenges)} />
-                            </Col>
-                        </Row>
-                        {errors.yourChallenges && <div className="text-danger mt-3">{errors.yourChallenges}</div>}
-                    </div>
+                        <div className="border rounded-5 p-md-5 p-4  mt-4 shadow ">
+                            <h4 className="form-title text-center fw-bold mb-2">WHAT IS YOUR CHALLENGE</h4>
+                            <p className="text-muted text-center mb-4">(Select All That Apply)</p>
+                            <Row>
+                                <Col md={6}>
+                                    <Form.Check label="Generating consistent pipeline" value="Generating consistent pipeline" onChange={(e) => handleCheckboxChange(e, yourChallenges, setYourChallenges)} />
+                                    <Form.Check label="Low conversion rate" value="Low conversion rate" onChange={(e) => handleCheckboxChange(e, yourChallenges, setYourChallenges)} />
+                                </Col>
+                                <Col md={6}>
+                                    <Form.Check label="Lack of thought leadership" value="Lack of thought leadership" onChange={(e) => handleCheckboxChange(e, yourChallenges, setYourChallenges)} />
+                                    <Form.Check label="Low brand awareness" value="Low brand awareness" onChange={(e) => handleCheckboxChange(e, yourChallenges, setYourChallenges)} />
+                                </Col>
+                            </Row>
+                            {errors.yourChallenges && <div className="text-danger mt-3">{errors.yourChallenges}</div>}
+                        </div>
 
-                    <div className="mt-4 d-flex justify-content-center">
-                        <Button className="btn-15 z-3" type="submit" disabled={loading}>Submit</Button>
+                        <div className="mt-4 d-flex justify-content-center">
+                            <Button className="btn-15 z-3 border border-danger p-1" type="submit" disabled={loading}>Submit</Button>
+                        </div>
+                    </Form>
+                ) : (
+                    <div className="text-center">
+                        <Alert variant="success">
+                            {post ? post : 'Your form has been submitted successfully!'}
+                        </Alert>
                     </div>
-                </Form>
-            ) : (
-                <div className="text-center">
-                    <Alert variant="success">
-                        {post ? post : 'Your form has been submitted successfully!'}
-                    </Alert>
-                </div>
-            )}
-        </Container>
+                )}
+            </Container>
+        </div>
     );
 };
 
