@@ -219,13 +219,13 @@ const OurServices = () => {
                 <p className=" d-md-none d-flex our-service-tab" >Our Services</p>
                 <Row className="d-md-none d-flex mobile-tab-row gap-1 p-3 mx-auto justify-content-start">
                     {TechIndustryData.map((service, index) => (
-                       <Button
-                       key={index}
-                       className={`service-tab ${activeIndex === index ? 'active-tab' : ''}`}
-                       onClick={() => setActiveIndex(index)}
-                   >
-                       {service.buttonText}
-                   </Button>
+                        <Button
+                            key={index}
+                            className={`service-tab ${activeIndex === index ? 'active-tab' : ''}`}
+                            onClick={() => setActiveIndex(index)}
+                        >
+                            {service.buttonText}
+                        </Button>
                     ))}
                 </Row>
 

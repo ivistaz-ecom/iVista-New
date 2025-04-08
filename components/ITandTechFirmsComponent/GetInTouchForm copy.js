@@ -153,7 +153,7 @@ const ContactForm = () => {
 
     return (
         <div className='bg-white'>
-            <Container className="py-3 form-container bg-white">
+            <Container className="py-5 form-container bg-white">
 
                 <style jsx>{`
                 .form-container {
@@ -164,7 +164,7 @@ const ContactForm = () => {
                     box-shadow: 0 5px 20px rgba(0,0,0,0.05);
                 }
                 .form-title {
-                    font-size: 35px;
+                    font-size: 48px;
                     font-weight: 800;
                     text-align: center;
                     color: #FF0000 ;
@@ -173,7 +173,7 @@ const ContactForm = () => {
                 .form-subtitle {
                     font-size: 18px;
                     text-align: center;
-                    // margin-bottom: 30px;
+                    margin-bottom: 30px;
                 }
                 .form-control {
                     border-radius: 10px;
@@ -201,28 +201,22 @@ const ContactForm = () => {
                     border-color: #FF0000;
                 }
 
-
                   @media (max-width: 768px) {
                   .form-title {
                       font-size: 2rem;
-                       padding: 10px;
                   }
                 }
             `}</style>
 
                 {!submitted ? (
                     <Form onSubmit={handleSubmit}>
-                        <div className="border rounded rounded-5 p-md-4 p-4 py-5 shadow mb-5 border border-red">
-                            <h2 className="form-title py-3">READY TO SCALE YOUR GROWTH?</h2>
-                            <p className="form-subtitle mb-2">
-                                Let’s drive predictable revenue and sustainable growth with
-                                <br className="d-block d-md-none" />
-                                AI-powered marketing.
+                        <div className="border rounded rounded-5 p-md-5 p-4 shadow mb-5 border border-red">
+                            <h2 className="form-title">READY TO SCALE YOUR GROWTH?</h2>
+                            <p className="form-subtitle">
+                                Let’s drive predictable revenue and sustainable growth with AI-powered marketing.
+                                <br />
+                                Get in touch today and start seeing results within weeks.
                             </p>
-
-
-                            <p className="form-subtitle mb-3 px-2">   Get in touch today and start seeing results within weeks.</p>
-
                             <Row className="g-3">
                                 <Col md={6}>
                                     <Form.Control type="text" name="yourFirstName" placeholder="First Name" value={yourFirstName} onChange={handleTextChange} isInvalid={!!errors.yourFirstName} required />
@@ -247,42 +241,37 @@ const ContactForm = () => {
                                     <Form.Control.Feedback type="invalid">{errors.yourPhone}</Form.Control.Feedback>
                                 </Col>
                             </Row>
+                        </div>
 
-                            <h4 className="form-title text-center fw-bold pt-5 pb-3">WHAT WOULD YOU LIKE?</h4>
-                            <Row >
+                        <div className="border rounded-5 p-md-5 p-4  mt-4 shadow mb-5">
+                            <h4 className="form-title text-center fw-bold mb-4">WHAT WOULD YOU LIKE?</h4>
+                            <Row>
                                 <Col md={6}>
                                     <Form.Check
                                         type="radio"
-                                        label={
-                                            <>
-                                                <strong>A complimentary audit of your website -</strong> Analyze your site’s performance, UX, and SEO with our expert insights & recommendations
-                                            </>
-                                        }
+                                        label={<><strong>A complimentary audit of your website -</strong> Analyze your site’s performance, UX, and SEO with our expert insights & recommendations</>}
                                         value="Website Audit"
                                         checked={whatWouldYouLike === 'Website Audit'}
                                         onChange={(e) => handleCheckboxChange(e, whatWouldYouLike, setWhatWouldYouLike, true)}
                                     />
                                 </Col>
-                                <Col md={6}>
+                                <Col md={6}  className='pt-3'>
                                     <Form.Check
                                         type="radio"
-                                        label={
-                                            <>
-                                                <strong>A complimentary thought leadership piece -</strong> tailored to your industry
-                                            </>
-                                        }
+                                        label={<><strong>A complimentary thought leadership piece -</strong> tailored to your industry</>}
                                         value="Thought Leadership Piece"
                                         checked={whatWouldYouLike === 'Thought Leadership Piece'}
                                         onChange={(e) => handleCheckboxChange(e, whatWouldYouLike, setWhatWouldYouLike, true)}
                                     />
                                 </Col>
                             </Row>
-
                             {errors.whatWouldYouLike && <div className="text-danger mt-3">{errors.whatWouldYouLike}</div>}
+                        </div>
 
-                            <h4 className="form-title text-center fw-bold pt-5 ">WHAT IS YOUR CHALLENGE</h4>
+                        <div className="border rounded-5 p-md-5 p-4  mt-4 shadow ">
+                            <h4 className="form-title text-center fw-bold mb-2">WHAT IS YOUR CHALLENGE</h4>
                             <p className="text-muted text-center mb-4">(Select All That Apply)</p>
-                            <Row className='mb-md-5'>
+                            <Row>
                                 <Col md={6}>
                                     <Form.Check label="Generating consistent pipeline" value="Generating consistent pipeline" onChange={(e) => handleCheckboxChange(e, yourChallenges, setYourChallenges)} />
                                     <Form.Check label="Low conversion rate" value="Low conversion rate" onChange={(e) => handleCheckboxChange(e, yourChallenges, setYourChallenges)} />
@@ -296,7 +285,7 @@ const ContactForm = () => {
                         </div>
 
                         <div className="mt-4 d-flex justify-content-center">
-                            <Button className="btn-15 z-3 p-1" type="submit" disabled={loading}>Submit</Button>
+                            <Button className="btn-15 z-3 border border-danger p-1" type="submit" disabled={loading}>Submit</Button>
                         </div>
                     </Form>
                 ) : (
