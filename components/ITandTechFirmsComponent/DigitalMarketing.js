@@ -92,7 +92,7 @@ const DigitalMarketing = () => {
 `}</style>
 
 
-            <div className="pt-5 bg-white" style={{ zIndex: 1 }}>
+            <div className="pt-md-5 bg-white" style={{ zIndex: 1 }}>
                 <Container>
                     {/* Desktop view */}
                     <h2 className="d-none d-lg-block custome-h2 text-uppercase text-center mb-3" style={{ fontSize: '4rem', fontWeight:'900' }}>

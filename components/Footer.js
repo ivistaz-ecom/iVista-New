@@ -3,7 +3,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link"; // Import Link from Next.js for routing
 import { Container, Row, Col } from "react-bootstrap";
-import CollectChatScript from "./ChatBot";
+// import CollectChatScript from "./ChatBot";
 
 const NewFooter = () => {
   const currentYear = new Date().getFullYear();
@@ -439,7 +439,7 @@ const NewFooter = () => {
           </div>
         </Container>
       </Container>
-      <CollectChatScript />
+      {/* <CollectChatScript /> */}
     </>
   );
 };

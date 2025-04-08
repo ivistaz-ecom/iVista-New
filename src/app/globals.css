@@ -1533,7 +1533,6 @@ background: rgba(255, 255, 255, 0) !important; */
 .btn-15 {
   position: relative;
   color: #ed2225 !important;
-  position: relative;
   display: block;
   overflow: hidden;
   width: 100%;
@@ -1542,12 +1541,13 @@ background: rgba(255, 255, 255, 0) !important; */
   border-radius: 12px;
   text-decoration: none !important;
   font-family: "monument regular", sans-serif !important;
-  border: 0px solid #ed2225 !important;
+  border: 1px solid #ed2225 !important; /* ✅ Set visible red border */
   text-align: center !important;
   font-size: 24px !important;
   z-index: 9999;
   background: #fff !important;
 }
+
 
 .btn-15:before,
 .btn-15:after {
