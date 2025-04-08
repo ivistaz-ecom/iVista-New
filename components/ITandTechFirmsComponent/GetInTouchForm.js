@@ -250,7 +250,7 @@ const ContactForm = () => {
 
                             <h4 className="form-title text-center fw-bold pt-5 pb-3">WHAT WOULD YOU LIKE?</h4>
                             <Row >
-                                <Col md={6}>
+                                <Col md={6} className='pt-3 pt-md-0'>
                                     <Form.Check
                                         type="radio"
                                         label={
@@ -263,7 +263,7 @@ const ContactForm = () => {
                                         onChange={(e) => handleCheckboxChange(e, whatWouldYouLike, setWhatWouldYouLike, true)}
                                     />
                                 </Col>
-                                <Col md={6}>
+                                <Col md={6} className='pt-3 pt-md-0'>
                                     <Form.Check
                                         type="radio"
                                         label={

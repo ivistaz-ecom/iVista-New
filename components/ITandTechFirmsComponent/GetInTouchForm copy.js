@@ -255,7 +255,7 @@ const ContactForm = () => {
                                         onChange={(e) => handleCheckboxChange(e, whatWouldYouLike, setWhatWouldYouLike, true)}
                                     />
                                 </Col>
-                                <Col md={6}  className='pt-3'>
+                                <Col md={6} className='pt-3'>
                                     <Form.Check
                                         type="radio"
                                         label={<><strong>A complimentary thought leadership piece -</strong> tailored to your industry</>}

@@ -20,7 +20,7 @@ const ContactModal = ({ show, onClose }) => {
 
   return (
     <div
-      className="modal fade show d-block"
+      className="modal fade show d-block mt-5"
       tabIndex="-1"
       style={{
         backgroundColor: 'rgba(0,0,0,0.5)',
@@ -44,7 +44,7 @@ const ContactModal = ({ show, onClose }) => {
           }}
         >
           <div className="modal-header">
-            <h5 className="modal-title fw-bold">Get In Touch</h5>
+            {/* <h5 className="modal-title fw-bold">Get In Touch</h5> */}
             <button
               type="button"
               className="btn-close"
