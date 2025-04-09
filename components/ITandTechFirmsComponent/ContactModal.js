@@ -3,7 +3,6 @@ import React, { useEffect } from 'react';
 import GetInTouchForm from './GetInTouchForm';
 
 const ContactModal = ({ show, onClose }) => {
-  // Prevent background scrolling
   useEffect(() => {
     if (show) {
       document.body.style.overflow = 'hidden';
@@ -20,16 +19,28 @@ const ContactModal = ({ show, onClose }) => {
 
   return (
     <div
-      className="modal fade show d-block mt-5"
+      className="modal fade show d-block"
       tabIndex="-1"
+      onClick={onClose}
       style={{
         backgroundColor: 'rgba(0,0,0,0.5)',
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        zIndex: 1050,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+       
       }}
     >
       <div
         className="modal-dialog modal-dialog-centered"
+        onClick={(e) => e.stopPropagation()}
         style={{
-          maxWidth: '800px',
+          maxWidth: '1100px',
           width: '90%',
           margin: '0 auto',
         }}
@@ -44,7 +55,6 @@ const ContactModal = ({ show, onClose }) => {
           }}
         >
           <div className="modal-header">
-            {/* <h5 className="modal-title fw-bold">Get In Touch</h5> */}
             <button
               type="button"
               className="btn-close"
@@ -65,15 +75,14 @@ const ContactModal = ({ show, onClose }) => {
         </div>
       </div>
 
-      {/* Responsive styles */}
       <style jsx>{`
-        @media (max-width: 576px) {
+        @media (max-width: 768px) {
           .modal-dialog {
             max-width: 95% !important;
           }
 
           .modal-content {
-            height: 60vh !important;
+            height: 80vh !important;
           }
 
           .modal-header,

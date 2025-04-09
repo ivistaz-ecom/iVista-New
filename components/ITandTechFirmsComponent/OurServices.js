@@ -271,7 +271,7 @@ const OurServices = () => {
                 </Row>
 
                 {/* Desktop Tabs + Content */}
-                <Row className="d-none d-md-flex justify-content-center align-items-center flex-wrap gap-3">
+                <Row className="d-none d-md-flex justify-content-center align-items-center flex-wrap gap-3 container-fluid">
                     <p className="our-service-tab" >Our Services</p>
                     {/* Tabs before */}
                     {TechIndustryData.map((service, index) =>

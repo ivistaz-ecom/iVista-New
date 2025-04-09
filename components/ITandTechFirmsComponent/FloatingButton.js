@@ -29,7 +29,7 @@ const FloatingButton = ({ onClick }) => {
         style={{ bottom: '20px', right: '20px', zIndex: 9999 }}
         onClick={onClick}
       >
-        Want to know more?
+        Tell Us Your Requirement
       </button>
     </>
   );
