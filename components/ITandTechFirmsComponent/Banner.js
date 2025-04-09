@@ -17,7 +17,7 @@ const Banner = () => {
           className="w-100 h-100 d-none d-md-block"
           style={{ objectFit: 'cover' }}
         >
-          <source src="/videos/tech_solution_banner.mp4" type="video/mp4" />
+          <source src="https://ivista-digital-bucket.blr1.cdn.digitaloceanspaces.com/IvistazWebsite/ai-powered-marketing/tech_solution_banner.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
 
@@ -30,7 +30,7 @@ const Banner = () => {
           className="w-100 h-100 d-block d-md-none"
           style={{ objectFit: '' }}
         >
-          <source src="/videos/tech_solution_banner_mobile_video.mp4" type="video/mp4" />
+          <source src="https://ivista-digital-bucket.blr1.cdn.digitaloceanspaces.com/IvistazWebsite/ai-powered-marketing/tech_solution_banner_mobile_video.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       </div>

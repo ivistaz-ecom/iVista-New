@@ -57,7 +57,7 @@ const ItAndTechFirms = () => {
                     className="w-100 d-none d-md-block"
                     style={{ height: '100vh', objectFit: 'cover' }}
                 >
-                    <source src="/videos/ivistaz-tech-video-desktop.mp4" type="video/mp4" />
+                    <source src="https://ivista-digital-bucket.blr1.cdn.digitaloceanspaces.com/IvistazWebsite/ai-powered-marketing/ivistaz-tech-video-desktop.mp4" type="video/mp4" />
                     Your browser does not support the video tag.
                 </video>
 
@@ -70,7 +70,7 @@ const ItAndTechFirms = () => {
                     className="w-100 d-block d-md-none"
                     style={{ height: '100vh', objectFit: '' }}
                 >
-                    <source src="/videos/ivistaz-tech-video-mobile.mp4" type="video/mp4" />
+                    <source src="https://ivista-digital-bucket.blr1.cdn.digitaloceanspaces.com/IvistazWebsite/ai-powered-marketing/ivistaz-tech-video-mobile.mp4" type="video/mp4" />
                     Your browser does not support the video tag.
                 </video>
             </div>
