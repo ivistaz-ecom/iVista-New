@@ -42,7 +42,7 @@ const ContactModal = ({ show, onClose }) => {
         style={{
           maxWidth: '1100px',
           width: '90%',
-          margin: '0 auto',
+          margin: '30px auto',
         }}
       >
         <div
