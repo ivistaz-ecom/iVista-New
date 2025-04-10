@@ -141,7 +141,8 @@ const OurServices = () => {
                     height: 500px;
                     animation: fadeSlideIn 0.5s ease;
                     min-width: 500px;
-                    max-width: 900px;
+                    max-width: 800px;
+    
                 }
                     
 
@@ -187,6 +188,7 @@ const OurServices = () => {
                         rotate: 0deg;
                         justify-content: center;
                         text-align: center;
+                         border-radius: 5px;
                     }
                         .our-service-tab {
                         writing-mode: horizontal-tb;
@@ -217,7 +219,7 @@ const OurServices = () => {
             <Container fluid className="p-md-5 p-3 bg-white">
                 {/* Mobile Tabs */}
                 <p className=" d-md-none d-flex our-service-tab" >Our Services</p>
-                <Row className="d-md-none d-flex mobile-tab-row gap-1 p-3 mx-auto justify-content-start">
+                <Row className="d-md-none d-flex mobile-tab-row gap-2 p-3 mx-auto justify-content-start">
                     {TechIndustryData.map((service, index) => (
                         <Button
                             key={index}
@@ -320,7 +322,6 @@ const OurServices = () => {
                                     <h5 className="mt-3">{TechIndustryData[activeIndex].mainText}</h5>
                                     <p className="custom-red-text py-2">{TechIndustryData[activeIndex].highlightNote}</p>
                                     <Row>
-
                                         {TechIndustryData[activeIndex].features.map((feature, idx, arr) => {
                                             const isLast = idx === arr.length - 1;
                                             const borderClass = !isLast ? 'border-right-dotted-red' : '';
@@ -333,13 +334,9 @@ const OurServices = () => {
                                             );
                                         })}
                                     </Row>
-
-
                                 </>
                             )}
-
                     </div>
-
                     {/* Tabs after */}
                     {TechIndustryData.map((service, index) =>
                         index > activeIndex ? (

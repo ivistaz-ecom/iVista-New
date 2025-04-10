@@ -33,7 +33,7 @@ const ContactModal = ({ show, onClose }) => {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-       
+
       }}
     >
       <div

@@ -35,7 +35,7 @@ const Banner = () => {
         </video>
       </div>
 
-   
+
     </div>
   );
 };
