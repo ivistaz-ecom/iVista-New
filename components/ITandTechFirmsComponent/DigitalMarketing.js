@@ -100,7 +100,7 @@ const DigitalMarketing = () => {
                     </h2>
 
                     {/* Mobile view */}
-                    <h2 className="d-block d-lg-none custome-h2 fw-bold text-uppercase text-center mb-2" style={{ fontSize: '2rem' }}>
+                    <h2 className="d-block d-lg-none custome-h2 fw-bold text-uppercase text-center pt-5" style={{ fontSize: '2rem' }}>
                         Digital Marketing <br />For the GenAI Era
                     </h2>
 

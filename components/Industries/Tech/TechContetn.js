@@ -13,20 +13,20 @@ const TechContetn = () => {
     return (
         <>
 
-            <ScrollAnimationIndustries />
+            {/* <ScrollAnimationIndustries /> */}
             <Container fluid className='bg-black p-0'>
                 <article>
                     <Col className='timeline3'>
                         <div className='position-relative'>
                             <div className='timeline-badge3 mt-4'></div>
-                            <Container className=" w-80 pb-4 pt-4  ps-7" >
+                            <Container className=" w-80 pb-4 pt-4 " >
                                 <p className="text-white para-text pe-lg-2 pe-3">The evolving digital trends and technologies are causing a tectonic shift in digital marketing for IT companies. In this scenario, iVistaz will help you keep pace and have a firm grasp on the evolving digital ecosystem to give you measurable ROI for your digital spending.</p>
                             </Container>
                         </div>
 
                         <div className='position-relative '>
                             <div className='timeline-badge3 mt-5'></div>
-                            <Container className="iv-bg w-80 banner pt-5 pb-5 ps-7">
+                            <Container className="iv-bg w-80 banner p-5">
                                 <p className='fw-bold text-white fs-3'> Our digital marketing services for Tech and IT brands include:</p>
                                 <ul>
                                     {/* <li className='industry-bullet'>
@@ -63,8 +63,17 @@ const TechContetn = () => {
                                 </Container>
                             </Container>
                         </div>
+                        <Container className="mt-5 mb-5 d-flex flex-column align-items-center justify-content-center text-center">
+                            <p className="fs-2 text-white mb-3">
+                                Smarter, Faster, AI-Powered Marketing for Tech Brands
+                            </p>
+                            <Link href="/ai-powered-marketing" className="btn-18 p-2 px-0">
+                                Explore Solutions
+                            </Link>
+                        </Container>
 
-                        <Container className="mt-5 mb-5 w-80 ps-7">
+
+                        <Container className="mt-5 mb-5 w-80">
                             <p className="fs-2 text-white">Here are some instances where our expertise and cutting-edge solutions have propelled Tech/IT companies to success:</p>
                         </Container>
                     </Col>

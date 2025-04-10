@@ -153,7 +153,7 @@ const ContactForm = () => {
 
     return (
         <div className='bg-white'>
-            <Container className="py-3 form-container bg-white">
+            <Container className="py-3 form-container bg-white p-0">
 
                 <style jsx>{`
                 .form-container {
@@ -302,7 +302,7 @@ const ContactForm = () => {
                 ) : (
                     <div className="text-center">
                         <Alert variant="success">
-                            {post ? post : 'Your form has been submitted successfully!'}
+                            {post ? post : 'Thank you for your interest. We will get back to you soon.'}
                         </Alert>
                     </div>
                 )}
